@@ -1,0 +1,10 @@
+/* Custom responsive helper utilities */
+/* Touch targets for mobile */
+@media (pointer: coarse) {
+  button, a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+

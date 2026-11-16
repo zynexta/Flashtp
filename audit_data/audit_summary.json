@@ -1,0 +1,97 @@
+{
+  "https://flashtp.com/": {
+    "status": 200,
+    "finalUrl": "https://flashtp.com/",
+    "length": 37200
+  },
+  "https://flashtp.com/about-us/": {
+    "status": 404,
+    "finalUrl": "https://flashtp.com/about-us/",
+    "length": 50171
+  },
+  "https://flashtp.com/about/": {
+    "status": 404,
+    "finalUrl": "https://flashtp.com/about/",
+    "length": 50171
+  },
+  "https://flashtp.com/services/": {
+    "status": 200,
+    "finalUrl": "https://flashtp.com/services/",
+    "length": 59032
+  },
+  "https://flashtp.com/long-short-term-lease-bus-rental-abu-dhabi/": {
+    "status": 200,
+    "finalUrl": "https://flashtp.com/long-short-term-lease-bus-rental-abu-dhabi/",
+    "length": 69698
+  },
+  "https://flashtp.com/school-college-transportation-abu-dabi/": {
+    "status": 200,
+    "finalUrl": "https://flashtp.com/school-college-transportation-abu-dabi/",
+    "length": 66914
+  },
+  "https://flashtp.com/staff-transportation-services-abudhabi/": {
+    "status": 200,
+    "finalUrl": "https://flashtp.com/staff-transportation-services-abudhabi/",
+    "length": 71309
+  },
+  "https://flashtp.com/rent-a-car/": {
+    "status": 200,
+    "finalUrl": "https://flashtp.com/rent-a-car/",
+    "length": 62049
+  },
+  "https://flashtp.com/inter-city-tour/": {
+    "status": 200,
+    "finalUrl": "https://flashtp.com/inter-city-tour/",
+    "length": 64303
+  },
+  "https://flashtp.com/group-pick-drop-services/": {
+    "status": 200,
+    "finalUrl": "https://flashtp.com/group-pick-drop-services/",
+    "length": 63658
+  },
+  "https://flashtp.com/daily-bus-service-in-abu-dhabi/": {
+    "status": 200,
+    "finalUrl": "https://flashtp.com/daily-bus-service-in-abu-dhabi/",
+    "length": 66713
+  },
+  "https://flashtp.com/our-fleet/": {
+    "status": 404,
+    "finalUrl": "https://flashtp.com/our-fleet/",
+    "length": 50171
+  },
+  "https://flashtp.com/fleet/": {
+    "status": 404,
+    "finalUrl": "https://flashtp.com/fleet/",
+    "length": 50171
+  },
+  "https://flashtp.com/contact-us/": {
+    "status": 200,
+    "finalUrl": "https://flashtp.com/contact-us/",
+    "length": 56125
+  },
+  "https://flashtp.com/contact/": {
+    "status": 200,
+    "finalUrl": "https://flashtp.com/contact-us/",
+    "length": 56125
+  },
+  "https://flashtp.com/blog/": {
+    "status": 200,
+    "finalUrl": "https://flashtp.com/blog/",
+    "length": 71466
+  },
+  "https://flashtp.com/wp-sitemap.xml": {
+    "status": 200,
+    "finalUrl": "https://flashtp.com/sitemap_index.xml",
+    "length": 884
+  },
+  "https://flashtp.com/sitemap_index.xml": {
+    "status": 200,
+    "finalUrl": "https://flashtp.com/sitemap_index.xml",
+    "length": 884
+  },
+  "https://flashtp.com/robots.txt": {
+    "status": 200,
+    "finalUrl": "https://flashtp.com/robots.txt",
+    "length": 103
+  }
+}
