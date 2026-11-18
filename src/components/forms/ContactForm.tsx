@@ -40,11 +40,20 @@ export const ContactForm: React.FC = () => {
 
     setIsSubmitting(true);
 
-    // Simulate reliable enquiry logging
+    const waUrl = generateWhatsAppMessage();
+    try {
+      const waWindow = window.open(waUrl, '_blank');
+      if (!waWindow || waWindow.closed || typeof waWindow.closed === 'undefined') {
+        window.location.href = waUrl;
+      }
+    } catch {
+      window.location.href = waUrl;
+    }
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 800);
+    }, 600);
   };
 
   const generateWhatsAppMessage = () => {

@@ -48,6 +48,24 @@ export const QuoteForm: React.FC = () => {
     }
   };
 
+  const buildWhatsAppUrl = (refCode: string) => {
+    const text =
+      `*New Transport Quote Request [Ref: ${refCode}]*\n` +
+      `• *Name:* ${formData.fullName}\n` +
+      `• *Email:* ${formData.email}\n` +
+      `• *Phone:* ${formData.phone}\n` +
+      `• *Service:* ${formData.serviceRequired}\n` +
+      `• *Vehicle:* ${formData.vehicleType}\n` +
+      `• *Passengers:* ${formData.passengers}\n` +
+      `• *Pickup:* ${formData.pickupLocation}\n` +
+      `• *Destination:* ${formData.destination}\n` +
+      `• *Date:* ${formData.travelDate}\n` +
+      `• *Duration:* ${formData.duration}\n` +
+      `• *Additional Notes:* ${formData.additionalRequirements || 'None'}`;
+    const cleanPhone = COMPANY_CONTACT.whatsapp.replace(/[^0-9]/g, '');
+    return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(text)}`;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const result = validateQuoteForm(formData);
@@ -63,16 +81,26 @@ export const QuoteForm: React.FC = () => {
     const refCode = `FT-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
     setQuoteReference(refCode);
 
+    const waUrl = buildWhatsAppUrl(refCode);
+
+    // Immediately trigger WhatsApp opening
+    try {
+      const waWindow = window.open(waUrl, '_blank');
+      if (!waWindow || waWindow.closed || typeof waWindow.closed === 'undefined') {
+        window.location.href = waUrl;
+      }
+    } catch {
+      window.location.href = waUrl;
+    }
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 900);
+    }, 600);
   };
 
   const getWhatsAppSummaryLink = () => {
-    const text = `*New Transport Quote Request [Ref: ${quoteReference || 'Pending'}]*\nName: ${formData.fullName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.serviceRequired}\nVehicle: ${formData.vehicleType}\nPassengers: ${formData.passengers}\nPickup: ${formData.pickupLocation}\nDestination: ${formData.destination}\nDate: ${formData.travelDate}\nDuration: ${formData.duration}\nRequirements: ${formData.additionalRequirements || 'None'}`;
-    const cleanPhone = COMPANY_CONTACT.whatsapp.replace(/[^0-9]/g, '');
-    return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(text)}`;
+    return buildWhatsAppUrl(quoteReference || 'Pending');
   };
 
   if (isSubmitted) {
