@@ -16,6 +16,12 @@ export interface HeroSlide {
   mobileImage?: string;
   alt: string;
   positionClass: string;
+  foregroundVehicle?: {
+    image: string;
+    alt: string;
+    className?: string;
+    mobileClassName?: string;
+  };
 }
 
 export const HERO_SLIDES: HeroSlide[] = [
@@ -30,10 +36,16 @@ export const HERO_SLIDES: HeroSlide[] = [
   {
     id: 'cadillac-limousine',
     name: 'Cadillac Escalade',
-    image: '/images/hero-cadillac-limousine.webp?v=3',
+    image: '/images/hero-cadillac-limousine.webp?v=4',
     mobileImage: '/images/hero-mobile-cadillac-escalade.webp',
     alt: 'Flash Transport Black Cadillac Escalade Luxury SUV in Abu Dhabi at Sunset',
-    positionClass: 'object-cover sm:object-right sm:scale-[1.12] md:scale-[1.16] lg:scale-[1.20] xl:scale-[1.22] sm:translate-x-[4%] md:translate-x-[6%] lg:translate-x-[8%] xl:translate-x-[9%] sm:origin-right'
+    positionClass: 'object-cover object-center brightness-[0.6] opacity-80',
+    foregroundVehicle: {
+      image: '/images/hero-new-cadillac-escalade.webp',
+      alt: 'Luxury Black Cadillac Escalade Platinum SUV in Abu Dhabi',
+      className: 'relative right-4 sm:right-6 md:right-8 lg:right-12 xl:right-16 bottom-8 sm:bottom-12 md:bottom-14 lg:bottom-16 w-[70%] sm:w-[62%] md:w-[56%] lg:w-[52%] xl:w-[48%] max-w-[820px] filter drop-shadow-[0_25px_40px_rgba(0,0,0,0.9)] contrast-[1.04] brightness-[1.03] transition-all duration-700 ease-out hidden sm:block',
+      mobileClassName: 'relative right-2 bottom-16 min-[360px]:bottom-20 w-[94%] max-w-[360px] filter drop-shadow-[0_20px_25px_rgba(0,0,0,0.85)] brightness-[1.04] sm:hidden'
+    }
   },
   {
     id: 'luxury-bus',
@@ -60,6 +72,10 @@ export const Hero: React.FC = () => {
       if (slide.mobileImage) {
         const mImg = new Image();
         mImg.src = slide.mobileImage;
+      }
+      if (slide.foregroundVehicle) {
+        const fgImg = new Image();
+        fgImg.src = slide.foregroundVehicle.image;
       }
     });
   }, []);
@@ -201,6 +217,28 @@ export const Hero: React.FC = () => {
                 className={cn('w-full h-full object-cover hidden sm:block', slide.positionClass)}
                 loading={idx === 0 ? 'eager' : 'lazy'}
               />
+
+              {/* Foreground Vehicle Layer (Right Side Highlight) */}
+              {slide.foregroundVehicle && (
+                <div className="absolute inset-0 pointer-events-none z-15 overflow-hidden flex items-end justify-end">
+                  {/* Desktop & Tablet Foreground Vehicle */}
+                  <div className={slide.foregroundVehicle.className}>
+                    <img
+                      src={slide.foregroundVehicle.image}
+                      alt={slide.foregroundVehicle.alt}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                  {/* Mobile Foreground Vehicle */}
+                  <div className={slide.foregroundVehicle.mobileClassName}>
+                    <img
+                      src={slide.foregroundVehicle.image}
+                      alt={slide.foregroundVehicle.alt}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           );
         })}
