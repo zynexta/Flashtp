@@ -24,7 +24,8 @@ import {
   ChevronRight,
   ShieldAlert,
   FileCheck2,
-  Navigation
+  Navigation,
+  Home
 } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { NotFound } from './NotFound';
@@ -117,6 +118,15 @@ const DEFAULT_HERO_CONFIG: ServiceHeroConfig = {
   gradientRightOpacity: 'rgba(10, 15, 25, 0.08)'
 };
 
+const SERVICE_MOBILE_HERO_IMAGES: Record<string, string> = {
+  'staff-transport': '/images/service-bg-staff-transport-mobile.jpg',
+  'school-bus': '/images/service-bg-school-bus-mobile.jpg',
+  'rent-a-car': '/images/service-bg-rent-a-car-mobile.jpg',
+  'inter-city-tour': '/images/service-bg-inter-city-tour-mobile.jpg',
+  'group-pick-drop': '/images/service-bg-airport-transfer-mobile.jpg',
+  'daily-bus': '/images/service-bg-daily-bus-mobile.jpg'
+};
+
 export const ServiceDetail: React.FC = () => {
   const { pathname } = useLocation();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -147,9 +157,125 @@ export const ServiceDetail: React.FC = () => {
     <div className="bg-[#FAFAFB] text-[#111827] min-h-screen">
       
       {/* =========================================================================
-          1. HERO SECTION: Global Premium Red & White Corporate Hero Architecture
+          1A. MOBILE HERO SECTION: Full-Height Cinematic Luxury Composition (Matching Target Design)
          ========================================================================= */}
-      <section className="relative bg-[#0A0F19] text-white min-h-[680px] sm:min-h-[700px] lg:min-h-[720px] xl:min-h-[740px] flex items-center overflow-hidden select-none">
+      <section className="lg:hidden relative w-full min-h-[100svh] min-[400px]:min-h-[820px] flex flex-col justify-between overflow-hidden select-none">
+        
+        {/* 1. Cinematic Full-Height Background Scenery */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={SERVICE_MOBILE_HERO_IMAGES[service.id] || imgUrl}
+            alt={`${service.title} Flash Transport Fleet`}
+            className="w-full h-full object-cover object-[center_top] pointer-events-none select-none"
+            loading="eager"
+          />
+          {/* Layered Top & Bottom Gradients for Text and Button Contrast */}
+          <div className="absolute inset-x-0 top-0 h-[440px] bg-gradient-to-b from-black/85 via-black/55 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-80 bg-gradient-to-t from-black/85 via-black/45 to-transparent pointer-events-none" />
+        </div>
+
+        {/* TOP SECTION: Category Badge, Heading, Description & Accent Line */}
+        <div className="relative z-20 w-full pt-20 min-[360px]:pt-24 xs:pt-28 px-4 xs:px-5 sm:px-6 flex flex-col items-center text-center">
+          
+          {/* Category Badge Pill */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/45 backdrop-blur-md border border-white/30 text-white text-[10px] min-[360px]:text-[11px] font-bold tracking-widest uppercase shadow-lg">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#E31E2B] animate-pulse flex-shrink-0" />
+            <span>{config.categoryBadge}</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#E31E2B] animate-pulse flex-shrink-0" />
+          </div>
+
+          {/* Main Service Heading in Elegant Serif Typography */}
+          <h1 className="mt-3.5 min-[360px]:mt-4 font-serif text-[28px] min-[360px]:text-[32px] xs:text-[36px] font-bold text-white tracking-normal leading-[1.14] text-center drop-shadow-md">
+            {config.titlePrefix ? (
+              <>
+                <span className="block">{config.titlePrefix}</span>
+                <span className="text-[#E31E2B] block">{config.titleHighlight}</span>
+              </>
+            ) : hasAmpersand ? (
+              <>
+                <span className="block">{titleParts[0].trim()}</span>
+                <span className="text-[#E31E2B] block">&amp; {titleParts[1].trim()}</span>
+              </>
+            ) : (
+              <span>{service.title}</span>
+            )}
+          </h1>
+
+          {/* Service Description */}
+          <p className="mt-3 font-body text-[13px] min-[360px]:text-[13.5px] xs:text-[14px] text-white/90 leading-[1.55] font-normal text-center max-w-[380px] drop-shadow-sm">
+            {service.shortDescription}
+          </p>
+
+          {/* Subtle Red Accent Line */}
+          <div className="w-12 h-0.5 bg-[#E31E2B] mx-auto mt-3.5 rounded-full" />
+        </div>
+
+        {/* MIDDLE SECTION: Open Viewing Window for Vehicle */}
+        <div className="flex-1 min-h-[160px] xs:min-h-[200px] pointer-events-none" />
+
+        {/* BOTTOM SECTION: Primary & Secondary CTAs */}
+        <div className="relative z-20 w-full px-4 xs:px-5 sm:px-6 pb-7 pt-3 space-y-2.5">
+          <Link
+            to={`${ROUTES.REQUEST_QUOTE}?service=${service.slug}`}
+            className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#E31E2B] hover:bg-[#B51220] text-white font-bold text-sm min-[360px]:text-[15px] shadow-xl shadow-black/30 transition-all duration-200 active:scale-[0.98]"
+          >
+            <span>Request a Quote for This Service</span>
+            <ArrowRight className="w-4 h-4 ml-1" />
+          </Link>
+
+          <a
+            href={`tel:${COMPANY_CONTACT.phone}`}
+            className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-black/40 backdrop-blur-md hover:bg-black/60 text-white font-semibold text-sm min-[360px]:text-[15px] border border-white/80 shadow-lg shadow-black/20 transition-all duration-200 active:scale-[0.98]"
+          >
+            <Phone className="w-4 h-4 text-[#E31E2B] mr-1" />
+            <span>Call {COMPANY_CONTACT.phoneDisplay}</span>
+          </a>
+        </div>
+      </section>
+
+      {/* Trust Credentials Information Panel on Mobile (Positioned cleanly below Cinematic Hero) */}
+      <div className="lg:hidden px-4 xs:px-5 sm:px-6 relative -mt-3 z-30 pb-4">
+        <div className="bg-white rounded-2xl shadow-xl shadow-black/8 border border-[#E8EAF0] p-3.5 min-[360px]:p-4 sm:p-5">
+          <div className="grid grid-cols-3 divide-x divide-[#E8EAF0] text-center">
+            
+            {/* Item 1: Abu Dhabi DoT & ADEK Approved */}
+            <div className="px-1.5 xs:px-2 flex flex-col items-center justify-start">
+              <div className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-1.5 flex-shrink-0">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <span className="font-sans text-[10px] min-[360px]:text-[11px] font-bold text-[#171B23] leading-tight">
+                Abu Dhabi<br />DoT &amp; ADEK<br />Approved
+              </span>
+            </div>
+
+            {/* Item 2: Triple ISO */}
+            <div className="px-1.5 xs:px-2 flex flex-col items-center justify-start">
+              <div className="w-8 h-8 rounded-full bg-[#FEECEE] text-[#E31E2B] flex items-center justify-center mb-1.5 flex-shrink-0">
+                <Award className="w-5 h-5" />
+              </div>
+              <span className="font-sans text-[10px] min-[360px]:text-[11px] font-bold text-[#171B23] leading-tight">
+                Triple ISO<br />9001 / 14001 /<br />45001
+              </span>
+            </div>
+
+            {/* Item 3: Live GPS Telematics */}
+            <div className="px-1.5 xs:px-2 flex flex-col items-center justify-start">
+              <div className="w-8 h-8 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center mb-1.5 flex-shrink-0">
+                <Navigation className="w-4 h-4 transform rotate-45" />
+              </div>
+              <span className="font-sans text-[10px] min-[360px]:text-[11px] font-bold text-[#171B23] leading-tight">
+                Live GPS<br />Telematics<br />Monitored
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {/* =========================================================================
+          1B. DESKTOP HERO SECTION: Global Premium Red & White Corporate Hero Architecture (Preserved 100%)
+         ========================================================================= */}
+      <section className="hidden lg:flex relative bg-[#0A0F19] text-white min-h-[680px] sm:min-h-[700px] lg:min-h-[720px] xl:min-h-[740px] items-center overflow-hidden select-none">
         
         {/* Background Image Layer with Service-Specific Focal Positioning */}
         <div className="absolute inset-0 z-0 overflow-hidden">
@@ -209,7 +335,7 @@ export const ServiceDetail: React.FC = () => {
             </div>
 
             {/* 3. Main Service Heading (48-60px desktop) with Red Brand Accent */}
-            <h1 className="font-sans text-3xl sm:text-5xl lg:text-[48px] xl:text-[54px] font-extrabold text-white tracking-tight leading-[1.14] drop-shadow-sm">
+            <h1 className="font-sans text-2xl xs:text-3xl sm:text-5xl lg:text-[48px] xl:text-[54px] font-extrabold text-white tracking-tight leading-[1.14] drop-shadow-sm">
               {config.titlePrefix ? (
                 <>
                   <span>{config.titlePrefix} </span>
@@ -330,38 +456,90 @@ export const ServiceDetail: React.FC = () => {
                 )}
               </div>
 
-              {/* 3. Key Benefits (Clean, White, Refined Rows with Red Accents) */}
-              <div className="bg-white rounded-3xl p-7 sm:p-10 border border-[#E7E9ED] shadow-sm relative overflow-hidden">
-                <div className="w-1.5 h-full bg-[#E31E2B] absolute left-0 top-0" />
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-2xl bg-[#FFF0F1] text-[#E31E2B] flex items-center justify-center flex-shrink-0">
-                    <Award className="w-5 h-5" />
+              {/* 3. Key Benefits (Desktop: Image 2 Split Layout with Vehicle / Mobile: Image 3 Clean Card) */}
+              <div className="bg-white rounded-[28px] sm:rounded-[32px] p-5 sm:p-7 lg:p-8 border border-[#ECEFF3] shadow-lg shadow-black/[0.03] relative overflow-hidden">
+                
+                {/* Top-Left Red Corner Hook (Matching Image 2 & Image 3) */}
+                <div className="absolute top-0 left-0 w-20 sm:w-28 h-16 sm:h-20 pointer-events-none z-20 overflow-hidden rounded-tl-[28px] sm:rounded-tl-[32px]">
+                  <div className="w-full h-full border-t-[4px] border-l-[4px] border-[#E31E2B] rounded-tl-[28px] sm:rounded-tl-[32px]" />
+                </div>
+
+                {/* Bottom-Right Red Corner Hook (Matching Image 2 & Image 3) */}
+                <div className="absolute bottom-0 right-0 w-20 sm:w-28 h-16 sm:h-20 pointer-events-none z-20 overflow-hidden rounded-br-[28px] sm:rounded-br-[32px]">
+                  <div className="w-full h-full border-b-[4px] border-r-[4px] border-[#E31E2B] rounded-br-[28px] sm:rounded-br-[32px]" />
+                </div>
+
+                {/* Subtle Ambient Red Glows in background */}
+                <div className="absolute -top-16 -right-16 w-48 h-48 bg-[#E31E2B]/5 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute -bottom-16 -left-16 w-48 h-48 bg-[#E31E2B]/5 rounded-full blur-3xl pointer-events-none" />
+
+                {/* Card Interior Layout: Flex row on desktop (Image 2), Single column on mobile (Image 3) */}
+                <div className="flex flex-col md:flex-row items-stretch gap-6 lg:gap-8 relative z-10">
+                  
+                  {/* Left Vehicle Image (Desktop Only, matching Image 2) */}
+                  <div className="hidden md:block w-60 lg:w-64 xl:w-72 flex-shrink-0 relative rounded-2xl overflow-hidden shadow-sm border border-[#ECEFF3]">
+                    <img
+                      src={SERVICE_MOBILE_HERO_IMAGES[service.id] || imgUrl}
+                      alt={`${service.title} Key Benefits`}
+                      className="w-full h-full object-cover object-center"
+                      loading="lazy"
+                    />
                   </div>
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#111827] tracking-tight">
-                      Key Benefits of Choosing Flash Transport
-                    </h3>
-                    <p className="text-xs sm:text-sm text-[#686D75] mt-0.5">
-                      Engineered for zero downtime, punctual runs, and complete passenger peace of mind
-                    </p>
+
+                  {/* Right Content Column (Desktop: Image 2 / Mobile: Full Width Image 3) */}
+                  <div className="flex-1 flex flex-col justify-between py-0.5">
+                    
+                    {/* Header: Icon, Divider, Title & Subtitle */}
+                    <div>
+                      <div className="flex items-center gap-3.5 mb-2">
+                        {/* Red Medal / Award Badge */}
+                        <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#FEECEE] flex items-center justify-center text-[#E31E2B] flex-shrink-0 shadow-xs">
+                          <Award className="w-6 h-6 stroke-[2.2]" />
+                        </div>
+
+                        {/* Vertical Red Divider Line */}
+                        <div className="w-[2.5px] h-8 sm:h-9 bg-[#E31E2B] rounded-full flex-shrink-0" />
+
+                        {/* Heading with 'Transport' Highlighted */}
+                        <div>
+                          <h3 className="text-xl sm:text-2xl font-extrabold text-[#111827] tracking-tight leading-tight">
+                            Key Benefits of Choosing{' '}
+                            <span className="block sm:inline">
+                              Flash <span className="text-[#E31E2B]">Transport</span>
+                            </span>
+                          </h3>
+                        </div>
+                      </div>
+
+                      {/* Subtitle */}
+                      <p className="text-xs sm:text-[13px] text-[#686D75] ml-0 sm:ml-1 mt-1 font-normal leading-relaxed">
+                        Engineered for zero downtime, punctual runs, and complete passenger peace of mind
+                      </p>
+                    </div>
+
+                    {/* Benefits Grid: 2 Columns on Desktop (Image 2), 1 Column on Mobile (Image 3) */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-3.5 mt-5 sm:mt-6">
+                      {service.benefits.map((b, idx) => (
+                        <div
+                          key={idx}
+                          className={cn(
+                            "flex items-center gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-[#F8F9FB] border border-[#ECEFF3] shadow-xs hover:border-[#E31E2B]/40 hover:bg-white transition-all group",
+                            idx === service.benefits.length - 1 && service.benefits.length % 2 !== 0 && "md:col-span-2"
+                          )}
+                        >
+                          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-[#FEECEE] text-[#E31E2B] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                            <Check className="w-4 h-4 stroke-[3]" />
+                          </div>
+                          <span className="text-xs sm:text-[13px] font-medium text-[#1F2937] leading-[1.45]">
+                            {b}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+
                   </div>
                 </div>
 
-                <div className="space-y-3.5">
-                  {service.benefits.map((b, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-start gap-4 p-4 sm:p-4.5 rounded-2xl bg-[#FAFAFB] border border-[#E7E9ED]/80 hover:border-[#E31E2B]/40 transition-colors group"
-                    >
-                      <div className="w-7 h-7 rounded-full bg-[#FFF0F1] text-[#E31E2B] flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
-                        <Check className="w-4 h-4 stroke-[2.5]" />
-                      </div>
-                      <span className="text-sm sm:text-[15px] font-medium text-[#111827] leading-relaxed">
-                        {b}
-                      </span>
-                    </div>
-                  ))}
-                </div>
               </div>
 
               {/* 4. Service Features: 4 Consistent Modern Feature Blocks */}

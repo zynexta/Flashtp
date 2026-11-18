@@ -28,7 +28,8 @@ export const Blog: React.FC = () => {
             className="w-full h-full object-cover object-[center_right] sm:object-right"
           />
           {/* Directional Dark Gradient Overlay for Maximum Left-Side Text Readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B0D12] via-[#0B0D12]/92 via-45% to-[#0B0D12]/25 sm:to-transparent" />
+          <div className="absolute inset-0 bg-[#0B0D12]/75 sm:hidden z-10 pointer-events-none" />
+          <div className="absolute inset-0 hidden sm:block bg-gradient-to-r from-[#0B0D12] via-[#0B0D12]/92 via-45% to-[#0B0D12]/25 sm:to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D12] via-transparent to-[#0B0D12]/60" />
         </div>
 
@@ -42,7 +43,7 @@ export const Blog: React.FC = () => {
             <span className="text-xs font-bold uppercase tracking-widest text-[#E31E2B] bg-white/10 px-3 py-1 rounded-full inline-block backdrop-blur-sm border border-white/10">
               UAE Ground Transport Knowledgebase
             </span>
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            <h1 className="text-2xl xs:text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
               Transport Guides, Regulations & Industry News
             </h1>
             <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-normal">

@@ -130,7 +130,7 @@ export const FleetPreview: React.FC = () => {
     setActiveIndex((newIndex + total) % total);
     setTimeout(() => {
       isTransitioning.current = false;
-    }, 600);
+    }, 450);
   }, [total]);
 
   const nextVehicle = useCallback(() => {
@@ -191,12 +191,19 @@ export const FleetPreview: React.FC = () => {
 
     // 2. Left Preview Vehicle: scale(0.65), positioned on the left with dedicated horizontal spacing
     if (distance === -1) {
-      const leftPos = isMobile ? '-2%' : isTablet ? '14%' : '17%';
-      const rotY = isMobile ? '12deg' : '18deg';
-      const scaleVal = isMobile ? 0.58 : isTablet ? 0.62 : 0.65;
+      if (isMobile) {
+        return {
+          left: '-35%',
+          transform: 'translate3d(-50%, 0, -60px) scale(0.55)',
+          zIndex: 10,
+          opacity: 0,
+          filter: 'brightness(70%)',
+          pointerEvents: 'none'
+        };
+      }
       return {
-        left: leftPos,
-        transform: `translate3d(-50%, 0, -80px) rotateY(${rotY}) scale(${scaleVal})`,
+        left: isTablet ? '14%' : '17%',
+        transform: `translate3d(-50%, 0, -80px) rotateY(${isTablet ? '14deg' : '18deg'}) scale(${isTablet ? 0.62 : 0.65})`,
         zIndex: 15,
         opacity: 0.70,
         filter: 'brightness(80%)',
@@ -207,12 +214,19 @@ export const FleetPreview: React.FC = () => {
 
     // 3. Right Preview Vehicle: scale(0.65), positioned on the right with dedicated horizontal spacing
     if (distance === 1) {
-      const rightPos = isMobile ? '102%' : isTablet ? '86%' : '83%';
-      const rotY = isMobile ? '-12deg' : '-18deg';
-      const scaleVal = isMobile ? 0.58 : isTablet ? 0.62 : 0.65;
+      if (isMobile) {
+        return {
+          left: '135%',
+          transform: 'translate3d(-50%, 0, -60px) scale(0.55)',
+          zIndex: 10,
+          opacity: 0,
+          filter: 'brightness(70%)',
+          pointerEvents: 'none'
+        };
+      }
       return {
-        left: rightPos,
-        transform: `translate3d(-50%, 0, -80px) rotateY(${rotY}) scale(${scaleVal})`,
+        left: isTablet ? '86%' : '83%',
+        transform: `translate3d(-50%, 0, -80px) rotateY(${isTablet ? '-14deg' : '-18deg'}) scale(${isTablet ? 0.62 : 0.65})`,
         zIndex: 15,
         opacity: 0.70,
         filter: 'brightness(80%)',
@@ -224,13 +238,13 @@ export const FleetPreview: React.FC = () => {
     // 4. Far / Hidden Vehicles: offscreen
     const isFarLeft = distance < 0;
     return {
-      left: isFarLeft ? '-30%' : '130%',
+      left: isFarLeft ? '-60%' : '160%',
       transform: isFarLeft
-        ? 'translate3d(-50%, 0, -200px) rotateY(28deg) scale(0.45)'
-        : 'translate3d(-50%, 0, -200px) rotateY(-28deg) scale(0.45)',
+        ? 'translate3d(-50%, 0, -180px) rotateY(25deg) scale(0.4)'
+        : 'translate3d(-50%, 0, -180px) rotateY(-25deg) scale(0.4)',
       zIndex: 5,
       opacity: 0,
-      filter: 'brightness(50%)',
+      filter: 'brightness(40%)',
       pointerEvents: 'none',
       cursor: 'default'
     };
@@ -273,7 +287,7 @@ export const FleetPreview: React.FC = () => {
         </div>
 
         {/* Soft Radial Ambient Highlight on Active Vehicle */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[380px] bg-gradient-to-r from-red-600/10 via-white/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[760px] h-[380px] bg-gradient-to-r from-red-600/10 via-white/5 to-transparent rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
@@ -332,80 +346,91 @@ export const FleetPreview: React.FC = () => {
           {/* ─────────────────────────────────────────────────────────────
               3D COVERFLOW STAGE: THREE DISTINCT ZONES (NO OVERLAP)
              ───────────────────────────────────────────────────────────── */}
-          <div
-            className="relative h-[240px] sm:h-[310px] lg:h-[350px] w-full flex items-end justify-center"
-            style={{
-              perspective: '1400px',
-              perspectiveOrigin: '50% 60%',
-              transformStyle: 'preserve-3d'
-            }}
-          >
-            {/* Left Circular Navigation Button */}
+          <div className="relative w-full">
+            {/* Left Circular Navigation Button (Elevated to z-50, outside 3D perspective to guarantee instant clickability) */}
             <button
-              onClick={prevVehicle}
-              className="absolute left-1 sm:left-4 lg:left-8 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-white text-[#111827] shadow-[0_10px_35px_rgba(0,0,0,0.6)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all cursor-pointer group focus:outline-none"
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                prevVehicle();
+              }}
+              className="absolute left-1 sm:left-4 lg:left-8 top-1/2 -translate-y-1/2 z-50 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-white text-[#111827] shadow-[0_10px_35px_rgba(0,0,0,0.65)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all cursor-pointer group focus:outline-none pointer-events-auto select-none"
               aria-label="Previous Vehicle"
             >
               <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:-translate-x-0.5 text-[#111827]" />
             </button>
 
-            {/* Right Circular Navigation Button */}
+            {/* Right Circular Navigation Button (Elevated to z-50, outside 3D perspective to guarantee instant clickability) */}
             <button
-              onClick={nextVehicle}
-              className="absolute right-1 sm:right-4 lg:right-8 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-white text-[#111827] shadow-[0_10px_35px_rgba(0,0,0,0.6)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all cursor-pointer group focus:outline-none"
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                nextVehicle();
+              }}
+              className="absolute right-1 sm:right-4 lg:right-8 top-1/2 -translate-y-1/2 z-50 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-white text-[#111827] shadow-[0_10px_35px_rgba(0,0,0,0.65)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all cursor-pointer group focus:outline-none pointer-events-auto select-none"
               aria-label="Next Vehicle"
             >
               <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:translate-x-0.5 text-[#111827]" />
             </button>
 
-            {/* 3D Vehicle Track */}
+            {/* 3D Coverflow Stage */}
             <div
-              className="relative w-full h-full flex items-end"
-              style={{ transformStyle: 'preserve-3d' }}
+              className="relative h-[240px] sm:h-[310px] lg:h-[350px] w-full flex items-end justify-center"
+              style={{
+                perspective: '1400px',
+                perspectiveOrigin: '50% 60%',
+                transformStyle: 'preserve-3d'
+              }}
             >
-              {FLEET_SHOWCASE_VEHICLES.map((vehicle, index) => {
-                const distance = getDistance(index);
-                const isLeft = distance === -1;
-                const isRight = distance === 1;
-                const isCenter = distance === 0;
+              {/* 3D Vehicle Track */}
+              <div
+                className="relative w-full h-full flex items-end"
+                style={{ transformStyle: 'preserve-3d' }}
+              >
+                {FLEET_SHOWCASE_VEHICLES.map((vehicle, index) => {
+                  const distance = getDistance(index);
+                  const isLeft = distance === -1;
+                  const isRight = distance === 1;
+                  const isCenter = distance === 0;
 
-                const style3D = getCoverflowStyles(distance);
+                  const style3D = getCoverflowStyles(distance);
 
-                return (
-                  <div
-                    key={vehicle.id}
-                    onClick={() => {
-                      if (isLeft) prevVehicle();
-                      if (isRight) nextVehicle();
-                    }}
-                    className="absolute bottom-0 flex flex-col items-center justify-end will-change-transform"
-                    style={{
-                      width: isMobile ? '78vw' : isTablet ? '440px' : '520px',
-                      transition:
-                        'left 600ms cubic-bezier(0.25, 1, 0.5, 1), transform 600ms cubic-bezier(0.25, 1, 0.5, 1), opacity 600ms ease, filter 600ms ease',
-                      ...style3D
-                    }}
-                  >
-                    {/* Pure Vehicle Cutout (object-fit: contain, no clipping) */}
-                    <div className="relative w-full flex items-end justify-center">
-                      <img
-                        src={vehicle.image}
-                        alt={vehicle.name}
-                        className={cn(
-                          'w-full max-h-[220px] sm:max-h-[290px] lg:max-h-[330px] object-contain transition-all duration-500',
-                          isCenter
-                            ? 'drop-shadow-[0_20px_30px_rgba(0,0,0,0.7)]'
-                            : 'drop-shadow-[0_12px_20px_rgba(0,0,0,0.45)]'
-                        )}
-                        loading={isCenter ? 'eager' : 'lazy'}
-                      />
+                  return (
+                    <div
+                      key={vehicle.id}
+                      onClick={() => {
+                        if (isLeft) prevVehicle();
+                        if (isRight) nextVehicle();
+                      }}
+                      className="absolute bottom-0 flex flex-col items-center justify-end will-change-transform"
+                      style={{
+                        width: isMobile ? '70vw' : isTablet ? '440px' : '520px',
+                        transition:
+                          'left 500ms cubic-bezier(0.25, 1, 0.5, 1), transform 500ms cubic-bezier(0.25, 1, 0.5, 1), opacity 450ms ease, filter 450ms ease',
+                        ...style3D
+                      }}
+                    >
+                      {/* Pure Vehicle Cutout (object-fit: contain, no clipping) */}
+                      <div className="relative w-full flex items-end justify-center">
+                        <img
+                          src={vehicle.image}
+                          alt={vehicle.name}
+                          className={cn(
+                            'w-full max-h-[220px] sm:max-h-[290px] lg:max-h-[330px] object-contain transition-all duration-500',
+                            isCenter
+                              ? 'drop-shadow-[0_20px_30px_rgba(0,0,0,0.7)]'
+                              : 'drop-shadow-[0_12px_20px_rgba(0,0,0,0.45)]'
+                          )}
+                          loading={isCenter ? 'eager' : 'lazy'}
+                        />
+                      </div>
+
+                      {/* Subtle Natural Tire Ground Shadow */}
+                      <div className="w-[85%] h-3.5 sm:h-4 bg-black/60 rounded-[100%] blur-[6px] -mt-1 pointer-events-none" />
                     </div>
-
-                    {/* Subtle Natural Tire Ground Shadow */}
-                    <div className="w-[85%] h-3.5 sm:h-4 bg-black/60 rounded-[100%] blur-[6px] -mt-1 pointer-events-none" />
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
 

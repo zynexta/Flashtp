@@ -31,20 +31,28 @@ export const About: React.FC = () => {
       {/* =========================================================================
           B. HERO SECTION (Full-Width Cinematic Panoramic Composition — Target Ref 2)
          ========================================================================= */}
-      <section className="relative w-full min-h-[640px] sm:min-h-[700px] lg:min-h-[750px] xl:min-h-[780px] flex items-center pt-28 sm:pt-32 lg:pt-24 pb-20 sm:pb-24 lg:pb-20 bg-white border-b border-[#E8EAF0] overflow-hidden select-none">
+      <section className="relative w-full min-h-[640px] xs:min-h-[680px] sm:min-h-[700px] lg:min-h-[750px] xl:min-h-[780px] flex items-start md:items-center pt-24 min-[360px]:pt-[100px] sm:pt-32 lg:pt-24 pb-64 xs:pb-72 sm:pb-24 lg:pb-20 bg-white border-b border-[#E8EAF0] overflow-hidden select-none">
         
-        {/* 1. Full-Width Panoramic Background Image (Abu Dhabi Skyline & Flash Transport Luxury Coach) */}
+        {/* 1. Background Image: Dedicated Mobile Portrait vs Desktop Panoramic Banner */}
+        {/* Mobile View: Dedicated Vertical Portrait Image (Not Cropped Desktop) */}
+        <img
+          src="/images/about-hero-mobile.jpg"
+          alt="Flash Transport Luxury Coach Bus in Abu Dhabi"
+          className="w-full h-full object-cover object-[center_top] md:hidden absolute inset-0 z-0"
+        />
+
+        {/* Desktop View: Full-Width Panoramic Background Image */}
         <div
           aria-hidden="true"
           style={{ backgroundImage: "url('/images/about-hero-banner.jpg?v=6')" }}
-          className="absolute inset-0 z-0 bg-no-repeat bg-cover bg-[position:right_center] sm:bg-[position:right_center] lg:bg-[position:right_center]"
+          className="hidden md:block absolute inset-0 z-0 bg-no-repeat bg-cover bg-[position:right_center]"
         />
 
-        {/* 2. Seamless Smooth Horizontal White Readability Gradient (Preserves Skyline Depth while guaranteeing 100% Text Clarity) */}
-        {/* Mobile: Top-to-bottom white fade ensuring complete readability */}
+        {/* 2. Seamless Smooth White Readability Gradients */}
+        {/* Mobile: Gentle natural sky fade for text readability (leaves vehicle below 100% bright and clear) */}
         <div
           aria-hidden="true"
-          className="md:hidden absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-white via-white/94 via-50% to-transparent to-85%"
+          className="md:hidden absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-white/30 via-white/5 to-transparent"
         />
         {/* Tablet & Desktop: Horizontal Gradient matching exact target specs (solid white on left -> soft fade -> fully revealing bus on right) */}
         <div
@@ -52,10 +60,11 @@ export const About: React.FC = () => {
           className="hidden md:block absolute inset-0 z-10 pointer-events-none bg-[linear-gradient(90deg,#FFFFFF_0%,rgba(255,255,255,0.98)_22%,rgba(255,255,255,0.92)_36%,rgba(255,255,255,0.65)_50%,rgba(255,255,255,0.22)_65%,transparent_78%)]"
         />
 
-        {/* 3. Layered Brand Red & Pale-Red Sweeping Curves on Bottom-Right */}
+        {/* 3. Layered Brand Red Sweeping Curves */}
+        {/* Desktop & Tablet: Layered Brand Red Sweeping Curves (Mobile curve is integrated directly in the dedicated mobile image) */}
         <div
           aria-hidden="true"
-          className="absolute right-0 bottom-0 top-0 w-full md:w-[60%] lg:w-[48%] xl:w-[42%] pointer-events-none select-none z-10 overflow-hidden"
+          className="hidden md:block absolute right-0 bottom-0 top-0 w-full md:w-[60%] lg:w-[48%] xl:w-[42%] pointer-events-none select-none z-10 overflow-hidden"
         >
           <svg
             viewBox="0 0 700 780"
@@ -121,35 +130,35 @@ export const About: React.FC = () => {
           </svg>
         </div>
 
-        {/* 4. Centered Content Container with Left-Aligned Copy (~45% Text Area) */}
+        {/* 4. Centered Content Container with Left-Aligned Copy */}
         <div className="max-w-[1500px] mx-auto w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-20">
-          <div className="w-full md:w-[62%] lg:w-[48%] xl:w-[45%] space-y-4 sm:space-y-5 text-left max-w-[640px]">
+          <div className="w-full md:w-[62%] lg:w-[48%] xl:w-[45%] space-y-2 xs:space-y-2.5 sm:space-y-5 text-left max-w-[640px]">
             {/* 1. Breadcrumb */}
             <Breadcrumbs
               items={[{ label: 'About Us' }]}
-              className="text-[#687080] mb-2 sm:mb-3"
+              className="text-[#687080] mb-1 sm:mb-3"
             />
 
             {/* 2. Experience Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FEECEE] border border-[#F8A5AC]/40 text-[#E31E2B] text-xs font-bold tracking-wider uppercase select-none shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-[#E31E2B]" />
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-0.5 sm:py-1.5 rounded-full bg-[#FEECEE] border border-[#F8A5AC]/40 text-[#E51E32] text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-bold tracking-wider uppercase select-none shadow-xs">
+              <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-[#E51E32]" />
               <span>20+ Years of Transport Leadership</span>
             </div>
 
-            {/* 3. Main Heading: 62-68px desktop, font-weight 800, line-height 0.98-1.02 */}
-            <h1 className="font-sans text-[36px] sm:text-[46px] md:text-[54px] lg:text-[62px] xl:text-[68px] font-extrabold text-[#171B23] tracking-[-0.03em] leading-[0.98] sm:leading-[1.0] max-w-[640px]">
+            {/* 3. Main Heading: 27-30px on mobile, 62-68px on desktop */}
+            <h1 className="font-sans text-[26px] min-[360px]:text-[28px] xs:text-[30px] sm:text-[44px] md:text-[54px] lg:text-[62px] xl:text-[68px] font-extrabold text-[#171B23] tracking-[-0.025em] leading-[1.12] sm:leading-[1.0] max-w-[640px]">
               <span className="block">Pioneering Passenger</span>
               <span className="block">
                 Mobility in{' '}
-                <span className="text-[#E31E2B]">Abu Dhabi &amp;</span>
+                <span className="text-[#E51E32]">Abu Dhabi &amp;</span>
               </span>
-              <span className="text-[#E31E2B] block">
+              <span className="text-[#E51E32] block">
                 Across the UAE
               </span>
             </h1>
 
-            {/* 4. Company Description: 18-19px, line-height 1.5, dark charcoal */}
-            <p className="font-body text-[16px] sm:text-[17px] lg:text-[18px] xl:text-[19px] text-[#3E4552] leading-[1.5] max-w-[580px] font-normal pt-1 sm:pt-2">
+            {/* 4. Company Description: 13-14px on mobile, 18-19px on desktop */}
+            <p className="font-body text-[12.5px] min-[360px]:text-[13px] sm:text-[17px] lg:text-[18px] xl:text-[19px] text-[#2D3748] leading-[1.48] sm:leading-[1.5] max-w-[320px] xs:max-w-[360px] sm:max-w-[580px] font-normal pt-0.5 sm:pt-2">
               Flash Transport Passengers By Bus LLC specializes in customized passenger transport solutions for corporate enterprises, educational institutions, government bodies, and private charters.
             </p>
           </div>

@@ -47,7 +47,7 @@ export const BlogDetail: React.FC = () => {
               {article.category}
             </span>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
               {article.title}
             </h1>
 

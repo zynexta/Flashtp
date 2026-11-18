@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { X, ChevronDown, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 import { MAIN_NAV_LINKS } from '../../data/navigation';
@@ -14,6 +14,18 @@ export interface MobileNavProps {
 
 export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
   const [expandedServices, setExpandedServices] = useState(false);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -40,7 +52,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
           <button
             onClick={onClose}
             aria-label="Close menu"
-            className="p-2 rounded-lg text-[#686D75] hover:text-[#191C22] hover:bg-[#F6F7F9] transition-colors"
+            className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl text-[#686D75] hover:text-[#191C22] hover:bg-[#F6F7F9] transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -54,7 +66,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                 <div key={item.label} className="py-1">
                   <button
                     onClick={() => setExpandedServices(!expandedServices)}
-                    className="w-full flex items-center justify-between px-3 py-2.5 text-base font-sans font-medium text-[#191C22] hover:text-[#D92332] rounded-lg hover:bg-[#F6F7F9] transition-colors"
+                    className="w-full min-h-[44px] flex items-center justify-between px-3.5 py-2.5 text-base font-sans font-medium text-[#191C22] hover:text-[#D92332] rounded-xl hover:bg-[#F6F7F9] transition-colors"
                   >
                     <span>{item.label}</span>
                     <ChevronDown className={cn(
@@ -64,7 +76,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                   </button>
 
                   {expandedServices && (
-                    <div className="pl-4 pr-1 py-1 space-y-1 bg-[#F6F7F9] rounded-lg mt-1 font-sans">
+                    <div className="pl-4 pr-1 py-1 space-y-1 bg-[#F6F7F9] rounded-xl mt-1 font-sans">
                       {item.children.map((sub) => (
                         <NavLink
                           key={sub.label}
@@ -72,7 +84,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                           onClick={onClose}
                           className={({ isActive }) =>
                             cn(
-                              'block px-3 py-2 text-sm rounded-md transition-colors',
+                              'min-h-[44px] flex items-center px-3.5 py-2 text-sm rounded-lg transition-colors',
                               isActive
                                 ? 'font-semibold text-[#E31E2B] bg-white shadow-xs'
                                 : 'text-[#686D75] hover:text-[#191C22]'
@@ -85,7 +97,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                       <Link
                         to={ROUTES.SERVICES}
                         onClick={onClose}
-                        className="flex items-center justify-between px-3 py-2 text-sm font-semibold text-[#E31E2B] rounded-md hover:bg-white transition-colors"
+                        className="min-h-[44px] flex items-center justify-between px-3.5 py-2 text-sm font-semibold text-[#E31E2B] rounded-lg hover:bg-white transition-colors"
                       >
                         <span>All Services</span>
                         <ArrowRight className="w-3.5 h-3.5" />
@@ -103,7 +115,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                 onClick={onClose}
                 className={({ isActive }) =>
                   cn(
-                    'block px-3 py-2.5 text-base font-sans font-medium rounded-lg transition-colors',
+                    'min-h-[44px] flex items-center px-3.5 py-2.5 text-base font-sans font-medium rounded-xl transition-colors',
                     isActive
                       ? 'text-[#D92332] bg-[#FEECEE]'
                       : 'text-[#191C22] hover:text-[#D92332] hover:bg-[#F6F7F9]'
@@ -121,7 +133,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
               onClick={onClose}
               variant="primary"
               size="lg"
-              className="w-full justify-center shadow-md"
+              className="w-full min-h-[44px] justify-center shadow-md rounded-xl"
               icon={<ArrowRight className="w-4 h-4" />}
             >
               Request a Quote
@@ -133,27 +145,27 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
         <div className="p-4 sm:p-5 border-t border-[#E7E9ED] bg-[#F6F7F9] space-y-3 text-xs text-[#686D75]">
           <a
             href={`tel:${COMPANY_CONTACT.phone}`}
-            className="flex items-center gap-2.5 text-[#191C22] font-semibold hover:text-[#D92332]"
+            className="min-h-[44px] flex items-center gap-2.5 text-[#191C22] font-semibold hover:text-[#D92332]"
           >
-            <div className="w-7 h-7 rounded-full bg-[#FEECEE] text-[#D92332] flex items-center justify-center flex-shrink-0">
-              <Phone className="w-3.5 h-3.5" />
+            <div className="w-8 h-8 rounded-full bg-[#FEECEE] text-[#D92332] flex items-center justify-center flex-shrink-0">
+              <Phone className="w-4 h-4" />
             </div>
             <span>{COMPANY_CONTACT.phoneDisplay}</span>
           </a>
 
           <a
             href={`mailto:${COMPANY_CONTACT.email}`}
-            className="flex items-center gap-2.5 text-[#191C22] font-semibold hover:text-[#D92332]"
+            className="min-h-[44px] flex items-center gap-2.5 text-[#191C22] font-semibold hover:text-[#D92332]"
           >
-            <div className="w-7 h-7 rounded-full bg-[#FEECEE] text-[#D92332] flex items-center justify-center flex-shrink-0">
-              <Mail className="w-3.5 h-3.5" />
+            <div className="w-8 h-8 rounded-full bg-[#FEECEE] text-[#D92332] flex items-center justify-center flex-shrink-0">
+              <Mail className="w-4 h-4" />
             </div>
             <span className="truncate">{COMPANY_CONTACT.email}</span>
           </a>
 
-          <div className="flex items-start gap-2.5 text-xs text-[#686D75]">
-            <div className="w-7 h-7 rounded-full bg-white text-[#686D75] flex items-center justify-center flex-shrink-0 mt-0.5">
-              <MapPin className="w-3.5 h-3.5" />
+          <div className="flex items-start gap-2.5 text-xs text-[#686D75] pt-1">
+            <div className="w-8 h-8 rounded-full bg-white text-[#686D75] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-xs">
+              <MapPin className="w-4 h-4" />
             </div>
             <span className="leading-snug">
               Al Zahiyah / TCA, Abu Dhabi - UAE

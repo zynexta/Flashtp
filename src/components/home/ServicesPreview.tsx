@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { SERVICES } from '../../data/services';
 import { ServiceCard } from '../services/ServiceCard';
@@ -13,6 +13,21 @@ export const ServicesPreview: React.FC = () => {
   const hasMore = remainingServices.length > 0;
 
   const displayedServices = isExpanded ? SERVICES : initialServices;
+
+  // Interleave services for 2-row horizontal scroll on mobile:
+  // Row 1: S0, S1, S2...
+  // Row 2: S3, S4, S5...
+  const mobileTwoRowServices = useMemo(() => {
+    const half = Math.ceil(displayedServices.length / 2);
+    const row1 = displayedServices.slice(0, half);
+    const row2 = displayedServices.slice(half);
+    const result: typeof displayedServices = [];
+    for (let i = 0; i < half; i++) {
+      if (row1[i]) result.push(row1[i]);
+      if (row2[i]) result.push(row2[i]);
+    }
+    return result;
+  }, [displayedServices]);
 
   return (
     <section className="py-20 sm:py-28 bg-[#FAFAFB] border-b border-[#E7E9ED] relative overflow-hidden select-none">
@@ -139,8 +154,21 @@ export const ServicesPreview: React.FC = () => {
           <div className="w-12 h-[3px] bg-[#D92332] rounded-full mx-auto mt-4" />
         </div>
 
-        {/* 4. Responsive 3-Column × 2-Row Grid matching Reference Image */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8">
+        {/* 4A. Mobile View Only: 2 Rows with Smooth Horizontal Touch Scroll */}
+        <div className="md:hidden overflow-x-auto pb-5 pt-1 -mx-4 px-4 scrollbar-none snap-x snap-mandatory">
+          <div className="grid grid-rows-2 grid-flow-col auto-cols-[275px] xs:auto-cols-[295px] gap-3.5 w-max">
+            {mobileTwoRowServices.map((service) => (
+              <ServiceCard
+                key={`mobile-${service.id}`}
+                service={service}
+                className="snap-start w-[275px] xs:w-[295px] h-full"
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* 4B. Tablet & Desktop View: 100% Unchanged Original 2 & 3 Column Grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8">
           {displayedServices.map((service, index) => (
             <ServiceCard
               key={service.id}

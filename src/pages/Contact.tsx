@@ -24,7 +24,8 @@ export const Contact: React.FC = () => {
             className="w-full h-full object-cover object-[center_right] sm:object-right brightness-[1.05] contrast-[1.02]"
           />
           {/* Directional Dark Gradient Overlay: high contrast on the left for text, completely clear and bright on the right */}
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,#0B0D12_0%,rgba(11,13,18,0.92)_25%,rgba(11,13,18,0.45)_40%,rgba(11,13,18,0)_58%)]" />
+          <div className="absolute inset-0 bg-[#0B0D12]/75 sm:hidden z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,#0B0D12_0%,rgba(11,13,18,0.92)_25%,rgba(11,13,18,0.45)_40%,rgba(11,13,18,0)_58%)] hidden sm:block" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D12]/50 via-transparent to-transparent via-12%" />
         </div>
 
@@ -38,7 +39,7 @@ export const Contact: React.FC = () => {
             <span className="text-xs font-bold uppercase tracking-widest text-[#E31E2B] bg-white/10 px-3 py-1 rounded-full inline-block backdrop-blur-sm border border-white/10">
               We Are Ready to Assist You
             </span>
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            <h1 className="text-2xl xs:text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
               Get in Touch with Flash Transport
             </h1>
             <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-normal">

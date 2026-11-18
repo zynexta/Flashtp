@@ -85,7 +85,7 @@ export const AboutPreview: React.FC = () => {
             </div>
 
             {/* Bottom-Right Floating 20+ Years Experience Card */}
-            <div className="bg-white rounded-2xl p-3.5 sm:p-4 shadow-[0_12px_40px_rgba(0,0,0,0.18)] border border-[#E7E9ED] text-center min-w-[130px] sm:min-w-[150px] absolute -bottom-5 -right-3 sm:-bottom-6 sm:-right-5 z-20 transition-transform duration-300 hover:scale-105">
+            <div className="bg-white rounded-2xl p-3.5 sm:p-4 shadow-[0_12px_40px_rgba(0,0,0,0.18)] border border-[#E7E9ED] text-center min-w-[125px] sm:min-w-[150px] absolute -bottom-4 right-2 sm:-bottom-6 sm:-right-4 lg:-right-5 z-20 transition-transform duration-300 hover:scale-105">
               <div className="font-sans font-extrabold text-3xl sm:text-4xl text-[#D92332] leading-none tracking-tight">
                 20+
               </div>

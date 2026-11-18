@@ -4,7 +4,7 @@ import { Breadcrumbs } from '../components/common/Breadcrumbs';
 import { SectionHeading } from '../components/common/SectionHeading';
 import { SERVICES } from '../data/services';
 import { ServiceGrid } from '../components/services/ServiceGrid';
-import { ShieldCheck, ArrowRight, Phone, CheckCircle2, Award, Bus, Clock } from 'lucide-react';
+import { ShieldCheck, ArrowRight, Phone, CheckCircle2, Award, Bus, Clock, Gem } from 'lucide-react';
 import { Button } from '../components/common/Button';
 import { ROUTES } from '../config/routes';
 import { COMPANY_CONTACT } from '../data/company';
@@ -16,8 +16,83 @@ export const Services: React.FC = () => {
 
   return (
     <div className="bg-[#FAFAFB] text-[#111827]">
-      {/* Services Hero Header: High-End Corporate Presentation */}
-      <section className="relative bg-[#0F1115] text-white pt-28 pb-20 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32 overflow-hidden select-none">
+      {/* 1. Mobile Services Hero Header (sm:hidden): Exact Match to Reference Visual */}
+      <section className="sm:hidden relative bg-[#090B10] text-white pt-24 pb-72 overflow-hidden select-none min-h-[660px]">
+        {/* Background Mobile Vehicle Image with Cadillac Escalade & Dusk Skyline */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/services-hero-mobile-cadillac.jpg"
+            alt="Flash Transport Luxury Mobility Solutions"
+            className="w-full h-full object-cover object-[center_bottom]"
+          />
+          {/* Top-down dark vignette to keep text 100% crisp and readable */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#090B10]/95 via-[#090B10]/75 via-48% to-transparent pointer-events-none" />
+          {/* Subtle Ambient Red Glow */}
+          <div className="absolute -top-20 -left-20 w-64 h-64 bg-[#E51E32]/15 rounded-full blur-3xl pointer-events-none" />
+        </div>
+
+        {/* Content Container */}
+        <div className="px-5 relative z-10 space-y-3.5">
+          {/* Eyebrow: — OUR SERVICES */}
+          <div className="inline-flex items-center gap-2">
+            <span className="w-5 h-[2px] bg-[#E51E32] rounded-full inline-block" />
+            <span className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-white/90">
+              OUR SERVICES
+            </span>
+          </div>
+
+          {/* Main Heading: Premium Transport Solutions */}
+          <h1 className="text-[30px] font-extrabold text-white tracking-tight leading-[1.12] drop-shadow-sm">
+            Premium Transport<br />
+            <span className="text-[#E51E32] italic font-semibold">Solutions</span>
+          </h1>
+
+          {/* Description */}
+          <p className="text-[13px] text-neutral-200/95 leading-relaxed font-normal max-w-xs pt-0.5">
+            Reliable, comfortable and professional transportation services across Abu Dhabi and the UAE.
+          </p>
+
+          {/* Feature Highlights: Minimal Inline Elements with Red Outline Icons & Subtle Separators */}
+          <div className="pt-1.5 pb-1 flex items-center justify-start gap-1.5 min-[360px]:gap-2 text-[10.5px] min-[360px]:text-[11.5px] text-white/95 font-medium select-none">
+            <span className="inline-flex items-center gap-1.5 flex-shrink-0">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#E51E32] flex-shrink-0" />
+              <span>Safety First</span>
+            </span>
+            <span className="text-white/30 font-light select-none px-0.5">|</span>
+            <span className="inline-flex items-center gap-1.5 flex-shrink-0">
+              <Gem className="w-3.5 h-3.5 text-[#E51E32] flex-shrink-0" />
+              <span>Premium Comfort</span>
+            </span>
+            <span className="text-white/30 font-light select-none px-0.5">|</span>
+            <span className="inline-flex items-center gap-1.5 flex-shrink-0">
+              <Clock className="w-3.5 h-3.5 text-[#E51E32] flex-shrink-0" />
+              <span>On-Time Always</span>
+            </span>
+          </div>
+
+          {/* Dual Action Buttons matching Reference */}
+          <div className="pt-2 flex flex-col min-[360px]:flex-row items-stretch min-[360px]:items-center gap-2.5">
+            <Link
+              to={ROUTES.FLEET}
+              className="min-h-[44px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#E51E32] hover:bg-[#C91829] text-white font-sans font-bold text-xs sm:text-[13px] transition-all duration-200 shadow-md shadow-[#E51E32]/30 active:scale-95 group"
+            >
+              <span>Explore Our Fleet</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+            </Link>
+
+            <a
+              href={`tel:${COMPANY_CONTACT.phone}`}
+              className="min-h-[44px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-sans font-semibold text-xs sm:text-[13px] border border-white/20 transition-all duration-200 active:scale-95"
+            >
+              <Phone className="w-3.5 h-3.5 text-white/90" />
+              <span>Call {COMPANY_CONTACT.phoneDisplay}</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Desktop Services Hero Header (hidden sm:block): 100% Preserved Existing Design */}
+      <section className="hidden sm:block relative bg-[#0F1115] text-white sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32 overflow-hidden select-none">
         {/* Background Image Layer with Sophisticated Contrast Vignettes */}
         <div className="absolute inset-0 z-0">
           <img

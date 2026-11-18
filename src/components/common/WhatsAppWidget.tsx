@@ -33,10 +33,10 @@ export const WhatsAppWidget: React.FC = () => {
   ];
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 select-none">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 select-none">
       {/* Expanded Popup */}
       {isOpen && (
-        <div className="absolute bottom-18 right-0 w-80 sm:w-96 bg-white rounded-3xl shadow-2xl border border-[#E7E9ED] overflow-hidden animate-fade-in text-[#191C22]">
+        <div className="absolute bottom-16 sm:bottom-18 right-0 w-[calc(100vw-2rem)] max-w-sm sm:w-96 bg-white rounded-3xl shadow-2xl border border-[#E7E9ED] overflow-hidden animate-fade-in text-[#191C22]">
           {/* Header */}
           <div className="bg-gradient-to-r from-[#128C7E] to-[#25D366] p-5 text-white flex items-start justify-between">
             <div className="flex items-center gap-3">

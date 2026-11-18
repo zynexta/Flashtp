@@ -291,7 +291,7 @@ export const ASSETS: Record<string, AssetRecord> = {
     "capacity": "7 Passengers",
     "alt": "GMC Denali Luxury SUV Rental Abu Dhabi",
     "page": "Our Fleet",
-    "localPath": "/images/fleet-gmc-denali.png",
+    "localPath": "/images/fleet-gmc-denali-car.png",
     "status": "available_locally"
   },
   "fleet-toyota-land-cruiser": {
@@ -317,7 +317,7 @@ export const ASSETS: Record<string, AssetRecord> = {
     "capacity": "7 Passengers",
     "alt": "Cadillac Escalade VIP Chauffeur Abu Dhabi",
     "page": "Our Fleet",
-    "localPath": "/images/fleet-cadillac-escalade.png",
+    "localPath": "/images/fleet-cadillac-escalade-car.png",
     "status": "available_locally"
   },
   "fleet-hyundai-h1": {
@@ -330,7 +330,7 @@ export const ASSETS: Record<string, AssetRecord> = {
     "capacity": "9 Passengers",
     "alt": "9 Seater Hyundai H1 Van Rental Abu Dhabi",
     "page": "Our Fleet",
-    "localPath": "/images/9-SEATER-HYUNDAI-H1.jpg",
+    "localPath": "/images/fleet-hyundai-h1.png",
     "status": "available_locally"
   },
   "fleet-toyota-fortuner": {
@@ -343,7 +343,7 @@ export const ASSETS: Record<string, AssetRecord> = {
     "capacity": "7 Passengers",
     "alt": "Toyota Fortuner SUV Rental Abu Dhabi",
     "page": "Our Fleet",
-    "localPath": "/images/toyoto-fortuner.jpg",
+    "localPath": "/images/fleet-toyota-fortuner.png",
     "status": "available_locally"
   },
   "fleet-kia-carnival": {
@@ -369,7 +369,7 @@ export const ASSETS: Record<string, AssetRecord> = {
     "capacity": "7 Passengers",
     "alt": "7 Seater Toyota Previa MPV Rental Abu Dhabi",
     "page": "Our Fleet",
-    "localPath": "/images/7-SEATER-TOYOTA-PREVIA.jpg",
+    "localPath": "/images/fleet-toyota-previa.png",
     "status": "available_locally"
   },
   "fleet-toyota-prado": {
@@ -382,7 +382,7 @@ export const ASSETS: Record<string, AssetRecord> = {
     "capacity": "7 Passengers",
     "alt": "Toyota Prado 4x4 Rental Abu Dhabi",
     "page": "Our Fleet",
-    "localPath": "/images/toyoto-prado.jpg",
+    "localPath": "/images/fleet-toyota-prado.png",
     "status": "available_locally"
   },
   "fleet-toyota-corolla": {
@@ -395,7 +395,7 @@ export const ASSETS: Record<string, AssetRecord> = {
     "capacity": "5 Passengers",
     "alt": "Toyota Corolla Sedan Rental Abu Dhabi",
     "page": "Our Fleet",
-    "localPath": "/images/toyota-korolla.jpg",
+    "localPath": "/images/fleet-toyota-corolla.png",
     "status": "available_locally"
   },
   "fleet-kia-optima": {
@@ -408,7 +408,7 @@ export const ASSETS: Record<string, AssetRecord> = {
     "capacity": "5 Passengers",
     "alt": "Kia Optima Executive Sedan Abu Dhabi",
     "page": "Our Fleet",
-    "localPath": "/images/kia-optima.jpg",
+    "localPath": "/images/fleet-kia-optima.png",
     "status": "available_locally"
   },
   "fleet-hyundai-accent": {
@@ -421,7 +421,7 @@ export const ASSETS: Record<string, AssetRecord> = {
     "capacity": "5 Passengers",
     "alt": "Hyundai Accent Sedan Rental Abu Dhabi",
     "page": "Our Fleet",
-    "localPath": "/images/accent.jpg",
+    "localPath": "/images/fleet-hyundai-accent.png",
     "status": "available_locally"
   },
   "fleet-kia-sportage": {
@@ -434,7 +434,7 @@ export const ASSETS: Record<string, AssetRecord> = {
     "capacity": "5 Passengers",
     "alt": "Kia Sportage Crossover SUV Abu Dhabi",
     "page": "Our Fleet",
-    "localPath": "/images/kia-sportage-2.jpg",
+    "localPath": "/images/fleet-kia-sportage.png",
     "status": "available_locally"
   },
   "fleet-hyundai-creta": {
@@ -447,7 +447,7 @@ export const ASSETS: Record<string, AssetRecord> = {
     "capacity": "5 Passengers",
     "alt": "Hyundai Creta Compact SUV Abu Dhabi",
     "page": "Our Fleet",
-    "localPath": "/images/creta-hynday.jpg",
+    "localPath": "/images/fleet-hyundai-creta.png",
     "status": "available_locally"
   },
   "fleet-hyundai-santafe": {
@@ -460,7 +460,7 @@ export const ASSETS: Record<string, AssetRecord> = {
     "capacity": "7 Passengers",
     "alt": "Hyundai Santa Fe Premium SUV Abu Dhabi",
     "page": "Our Fleet",
-    "localPath": "/images/huyndaisantafe.jpg",
+    "localPath": "/images/fleet-hyundai-santafe.png",
     "status": "available_locally"
   },
   "fleet-ashok-leyland-66": {
@@ -473,7 +473,7 @@ export const ASSETS: Record<string, AssetRecord> = {
     "capacity": "66 Passengers",
     "alt": "66 Seater Ashok Leyland Falcon Bus Abu Dhabi",
     "page": "Our Fleet",
-    "localPath": "/images/fleet-ashok-leyland-66.png",
+    "localPath": "/images/fleet-ashok-leyland-66-car.png",
     "status": "available_locally"
   },
   "fleet-luxury-bus-50": {
@@ -486,7 +486,7 @@ export const ASSETS: Record<string, AssetRecord> = {
     "capacity": "50 Passengers",
     "alt": "50 Seater Luxury Coach Bus Rental Abu Dhabi",
     "page": "Our Fleet",
-    "localPath": "/images/fleet-luxury-coach-50.png",
+    "localPath": "/images/fleet-luxury-coach-50-car.png",
     "status": "available_locally"
   },
   "fleet-luxury-bus-37": {
@@ -499,7 +499,7 @@ export const ASSETS: Record<string, AssetRecord> = {
     "capacity": "37 Passengers",
     "alt": "37 Seater Luxury Coach Rental Abu Dhabi",
     "page": "Our Fleet",
-    "localPath": "/images/kyo1.jpg",
+    "localPath": "/images/fleet-luxury-bus-37.png",
     "status": "available_locally"
   },
   "fleet-fuso-bus-34": {
@@ -512,7 +512,7 @@ export const ASSETS: Record<string, AssetRecord> = {
     "capacity": "34 Passengers",
     "alt": "34 Seater Mitsubishi Rosa / Fuso Bus Abu Dhabi",
     "page": "Our Fleet",
-    "localPath": "/images/fleet-mitsubishi-fuso-34.png",
+    "localPath": "/images/fleet-mitsubishi-fuso-34-car.png",
     "status": "available_locally"
   },
   "fleet-toyota-coaster-22": {
@@ -538,7 +538,7 @@ export const ASSETS: Record<string, AssetRecord> = {
     "capacity": "13-14 Passengers",
     "alt": "13 Seater Toyota Hiace Commuter Van Abu Dhabi",
     "page": "Our Fleet",
-    "localPath": "/images/fleet-toyota-hiace-13.png",
+    "localPath": "/images/fleet-toyota-hiace-13-car.png",
     "status": "available_locally"
   },
   "fleet-toyota-hilux": {
@@ -551,7 +551,7 @@ export const ASSETS: Record<string, AssetRecord> = {
     "capacity": "5 Passengers + Cargo Bed",
     "alt": "Toyota Hilux Double Cabin Pickup Abu Dhabi",
     "page": "Our Fleet",
-    "localPath": "/images/th1.jpg",
+    "localPath": "/images/fleet-toyota-hilux.png",
     "status": "available_locally"
   },
   "blog-ser1-1": {

@@ -32,42 +32,42 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, className }) 
       </div>
 
       {/* 2. Card Content Body */}
-      <div className="p-6 sm:p-7 flex flex-col justify-between flex-1">
+      <div className="p-4 xs:p-5 sm:p-7 flex flex-col justify-between flex-1">
         <div>
           {/* Bold Dark Navy Title */}
-          <h3 className="font-sans text-[19px] sm:text-[20px] font-bold text-[#111827] group-hover:text-[#D92332] transition-colors leading-snug">
+          <h3 className="font-sans text-[17px] sm:text-[20px] font-bold text-[#111827] group-hover:text-[#D92332] transition-colors leading-snug">
             <Link to={`/${service.slug}/`}>
               {service.title}
             </Link>
           </h3>
 
           {/* Small Corporate Red Horizontal Accent Line Beneath Title */}
-          <div className="w-8 h-[2.5px] bg-[#D92332] rounded-full mt-2.5 mb-3.5" />
+          <div className="w-8 h-[2.5px] bg-[#D92332] rounded-full mt-2 mb-2.5 sm:mt-2.5 sm:mb-3.5" />
 
           {/* Short Description with Comfortable Line Spacing */}
-          <p className="font-body text-[13.5px] sm:text-[14px] text-[#4B5563] leading-relaxed line-clamp-3 min-h-[64px]">
+          <p className="font-body text-[12.5px] sm:text-[14px] text-[#4B5563] leading-relaxed line-clamp-2 sm:line-clamp-3 min-h-[38px] sm:min-h-[64px]">
             {service.shortDescription}
           </p>
         </div>
 
         {/* 3. Bottom Action Row (Primary Red Button + Divider + Secondary Text Action) */}
-        <div className="flex items-center gap-4 mt-6 pt-2">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-4 mt-4 sm:mt-6 pt-1 sm:pt-2">
           {/* Primary Action: Explore Service */}
           <Link
             to={`/${service.slug}/`}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#D92332] hover:bg-[#B91F2D] text-white text-xs sm:text-[13px] font-semibold rounded-full shadow-sm hover:shadow transition-all duration-200 group/btn active:scale-95"
+            className="min-h-[40px] sm:min-h-[44px] inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 bg-[#D92332] hover:bg-[#B91F2D] text-white text-[11px] sm:text-[13px] font-semibold rounded-full shadow-sm hover:shadow transition-all duration-200 group/btn active:scale-95"
           >
             <span>Explore Service</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5" />
+            <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 transition-transform group-hover/btn:translate-x-0.5" />
           </Link>
 
           {/* Thin Vertical Subtle Separator */}
-          <div className="h-4 w-[1px] bg-[#E5E7EB]" />
+          <div className="hidden xs:block h-3.5 w-[1px] bg-[#E5E7EB]" />
 
           {/* Secondary Action: Get Quote */}
           <Link
             to={`${ROUTES.REQUEST_QUOTE}?service=${service.slug}`}
-            className="font-sans text-xs sm:text-[13px] font-semibold text-[#111827] hover:text-[#D92332] transition-colors"
+            className="min-h-[40px] sm:min-h-[44px] inline-flex items-center font-sans text-[11px] sm:text-[13px] font-semibold text-[#111827] hover:text-[#D92332] transition-colors"
           >
             Get Quote
           </Link>

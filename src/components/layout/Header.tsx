@@ -4,6 +4,7 @@ import { Menu, ArrowRight } from 'lucide-react';
 import { DesktopNav } from './DesktopNav';
 import { MobileNav } from './MobileNav';
 import { ROUTES } from '../../config/routes';
+import { SERVICES } from '../../data/services';
 import { cn } from '../../lib/utils';
 
 export const Header: React.FC = () => {
@@ -15,6 +16,8 @@ export const Header: React.FC = () => {
   const isLightHeroPage =
     pathname.startsWith('/about') ||
     pathname.startsWith('/best-bus-rental-companies-in-abu-dhabi-and-dubai');
+  const cleanPath = pathname.replace(/^\/+|\/+$/g, '');
+  const isServiceDetailPage = SERVICES.some((s) => s.slug === cleanPath);
   const isWhiteHeader = isScrolled || isLightHeroPage;
 
   useEffect(() => {
@@ -48,7 +51,7 @@ export const Header: React.FC = () => {
           'fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 select-none',
           isWhiteHeader
             ? cn(
-                'bg-white/95 backdrop-blur-md border-b border-[#E8EAF0]',
+                'bg-white backdrop-blur-none md:bg-white/95 md:backdrop-blur-md border-b border-[#E8EAF0]',
                 isScrolled && 'shadow-header'
               )
             : 'bg-transparent border-b border-white/10'
@@ -63,12 +66,22 @@ export const Header: React.FC = () => {
         >
           {/* Logo: White text version on transparent header, Dark text version on white header */}
           <Link to={ROUTES.HOME} className="flex items-center gap-3 group flex-shrink-0">
+            {/* Dark logo on white header */}
             <img
-              src={isWhiteHeader ? "/images/flash-transport-logo.png?v=3" : "/images/flash-transport-logo-white.png?v=3"}
+              src="/images/flash-transport-logo.png?v=5"
               alt="Flash Transport Passengers By Bus LLC"
               className={cn(
                 "h-10 sm:h-11 lg:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-[1.02]",
-                !isWhiteHeader && "drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
+                isWhiteHeader ? "block" : "hidden"
+              )}
+            />
+            {/* White logo on transparent header */}
+            <img
+              src="/images/flash-transport-logo-white.png?v=5"
+              alt="Flash Transport Passengers By Bus LLC"
+              className={cn(
+                "h-10 sm:h-11 lg:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-[1.02]",
+                isWhiteHeader ? "hidden" : "block"
               )}
             />
           </Link>
@@ -90,7 +103,7 @@ export const Header: React.FC = () => {
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Toggle navigation menu"
               className={cn(
-                'p-2 rounded-lg lg:hidden transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#E31E2B]',
+                'min-w-[44px] min-h-[44px] p-2.5 rounded-xl lg:hidden flex items-center justify-center transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#E31E2B]',
                 isWhiteHeader
                   ? 'text-[#171B23] hover:bg-[#F6F7F9]'
                   : 'text-white hover:bg-white/10'
