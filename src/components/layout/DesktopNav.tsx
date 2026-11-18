@@ -203,7 +203,7 @@ export const DesktopNav: React.FC<DesktopNavProps> = ({ isDark = false, isScroll
                         {/* Bottom Bus with Abu Dhabi Skyline Banner Image (Compact Height) */}
                         <div className="mt-3 -mx-4 sm:-mx-4.5 lg:-mx-5 -mb-4 sm:-mb-4.5 lg:-mb-5 relative overflow-hidden rounded-bl-[12px] h-22 sm:h-26">
                           <img
-                            src="/images/about-hero-banner.jpg"
+                            src="/images/about-hero-banner.webp"
                             alt="Flash Transport Luxury Fleet Abu Dhabi"
                             className="w-full h-full object-cover object-[72%_center]"
                           />

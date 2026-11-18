@@ -51,7 +51,7 @@ export const AboutPreview: React.FC = () => {
             {/* Main Rounded Image Card */}
             <div className="relative rounded-[28px] sm:rounded-[34px] overflow-hidden shadow-2xl border border-[#E7E9ED] bg-neutral-100 group">
               <img
-                src="/images/about-school-bus-fleet.jpg"
+                src="/images/about-school-bus-fleet.webp"
                 alt="Flash Transport Certified Passenger Bus Fleet in Abu Dhabi"
                 className="w-full h-[360px] sm:h-[430px] lg:h-[460px] object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
@@ -69,7 +69,7 @@ export const AboutPreview: React.FC = () => {
               {/* Top-Right Floating EIAC Accredited Badge */}
               <div className="absolute top-4 right-4 sm:top-5 sm:right-5 bg-white rounded-2xl p-2.5 sm:p-3 shadow-lg border border-[#E7E9ED] flex items-center gap-3 z-10 transition-transform duration-300 hover:scale-105">
                 <img
-                  src="/images/cert-eiac-eqcs.jpg"
+                  src="/images/cert-eiac-eqcs.webp"
                   alt="EIAC Accredited OHSMS Certification"
                   className="h-8 sm:h-9 w-auto object-contain"
                 />

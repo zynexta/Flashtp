@@ -68,7 +68,7 @@ export const Header: React.FC = () => {
           <Link to={ROUTES.HOME} className="flex items-center gap-3 group flex-shrink-0">
             {/* Dark logo on white header */}
             <img
-              src="/images/flash-transport-logo.png?v=5"
+              src="/images/flash-transport-logo.webp?v=5"
               alt="Flash Transport Passengers By Bus LLC"
               className={cn(
                 "h-10 sm:h-11 lg:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-[1.02]",
@@ -77,7 +77,7 @@ export const Header: React.FC = () => {
             />
             {/* White logo on transparent header */}
             <img
-              src="/images/flash-transport-logo-white.png?v=5"
+              src="/images/flash-transport-logo-white.webp?v=5"
               alt="Flash Transport Passengers By Bus LLC"
               className={cn(
                 "h-10 sm:h-11 lg:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-[1.02]",

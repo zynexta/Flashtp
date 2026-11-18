@@ -52,13 +52,13 @@ export const Fleet: React.FC = () => {
         <div className="absolute inset-0 z-0">
           {/* Mobile View: Dedicated Vertical Mobile Hero Image */}
           <img
-            src="/images/fleet-luxury-hero-mobile.jpg"
+            src="/images/fleet-luxury-hero-mobile.webp"
             alt="Flash Transport Luxury Vehicle Fleet"
             className="w-full h-full object-cover object-center sm:hidden"
           />
           {/* Desktop & Tablet View: Full Landscape Hero Banner */}
           <img
-            src="/images/fleet-luxury-hero-banner.jpg"
+            src="/images/fleet-luxury-hero-banner.webp"
             alt="Flash Transport Luxury Vehicle Fleet"
             className="w-full h-full object-cover object-[center_right] sm:object-right hidden sm:block"
           />

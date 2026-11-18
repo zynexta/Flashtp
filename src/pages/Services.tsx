@@ -21,7 +21,7 @@ export const Services: React.FC = () => {
         {/* Background Mobile Vehicle Image with Cadillac Escalade & Dusk Skyline */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/services-hero-mobile-cadillac.jpg"
+            src="/images/services-hero-mobile-cadillac.webp"
             alt="Flash Transport Luxury Mobility Solutions"
             className="w-full h-full object-cover object-[center_bottom]"
           />
@@ -96,7 +96,7 @@ export const Services: React.FC = () => {
         {/* Background Image Layer with Sophisticated Contrast Vignettes */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/dubai-hero-luxury-coach.jpg"
+            src="/images/dubai-hero-luxury-coach.webp"
             alt="Flash Transport Commercial Fleet UAE"
             className="w-full h-full object-cover object-center scale-[1.02]"
           />

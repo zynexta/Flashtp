@@ -44,7 +44,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
         <div className="p-4 sm:p-5 border-b border-[#E7E9ED] flex items-center justify-between">
           <Link to={ROUTES.HOME} onClick={onClose} className="flex items-center gap-2">
             <img
-              src="/images/flash-transport-logo.png?v=3"
+              src="/images/flash-transport-logo.webp?v=3"
               alt="Flash Transport Logo"
               className="h-10 w-auto object-contain"
             />

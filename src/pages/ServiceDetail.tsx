@@ -119,12 +119,12 @@ const DEFAULT_HERO_CONFIG: ServiceHeroConfig = {
 };
 
 const SERVICE_MOBILE_HERO_IMAGES: Record<string, string> = {
-  'staff-transport': '/images/service-bg-staff-transport-mobile.jpg',
-  'school-bus': '/images/service-bg-school-bus-mobile.jpg',
-  'rent-a-car': '/images/service-bg-rent-a-car-mobile.jpg',
-  'inter-city-tour': '/images/service-bg-inter-city-tour-mobile.jpg',
-  'group-pick-drop': '/images/service-bg-airport-transfer-mobile.jpg',
-  'daily-bus': '/images/service-bg-daily-bus-mobile.jpg'
+  'staff-transport': '/images/service-bg-staff-transport-mobile.webp',
+  'school-bus': '/images/service-bg-school-bus-mobile.webp',
+  'rent-a-car': '/images/service-bg-rent-a-car-mobile.webp',
+  'inter-city-tour': '/images/service-bg-inter-city-tour-mobile.webp',
+  'group-pick-drop': '/images/service-bg-airport-transfer-mobile.webp',
+  'daily-bus': '/images/service-bg-daily-bus-mobile.webp'
 };
 
 export const ServiceDetail: React.FC = () => {

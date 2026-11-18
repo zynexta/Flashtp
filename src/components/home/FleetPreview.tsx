@@ -35,7 +35,7 @@ export const FLEET_SHOWCASE_VEHICLES: FleetShowcaseVehicle[] = [
     category: 'Large Coaches',
     capacity: '50 Passengers',
     tagline: 'The Pinnacle of Intercity & Corporate Travel',
-    image: '/images/fleet-luxury-coach-50-car.png',
+    image: '/images/fleet-luxury-coach-50-car.webp',
     specs: {
       seating: '50 Reclining Velvet Seats (2x2)',
       climate: 'Individual Tropicalized AC Vents',
@@ -51,7 +51,7 @@ export const FLEET_SHOWCASE_VEHICLES: FleetShowcaseVehicle[] = [
     category: 'Large Coaches',
     capacity: '66 Passengers',
     tagline: 'High-Capacity Heavy Commercial Staff & School Transport',
-    image: '/images/fleet-ashok-leyland-66-car.png',
+    image: '/images/fleet-ashok-leyland-66-car.webp',
     specs: {
       seating: '66 High-Back Safety Seats (3x2)',
       climate: 'Heavy-Duty Industrial Dual AC',
@@ -67,7 +67,7 @@ export const FLEET_SHOWCASE_VEHICLES: FleetShowcaseVehicle[] = [
     category: 'Luxury Cars',
     capacity: '7 Passengers',
     tagline: 'The Benchmark of American VIP Luxury & Prestige',
-    image: '/images/fleet-cadillac-escalade-car.png',
+    image: '/images/fleet-cadillac-escalade-car.webp',
     specs: {
       seating: '7 Passengers (Captain Chairs)',
       climate: 'Tri-Zone Automatic Climate',
@@ -83,7 +83,7 @@ export const FLEET_SHOWCASE_VEHICLES: FleetShowcaseVehicle[] = [
     category: 'Luxury Cars',
     capacity: '7 Passengers',
     tagline: 'Commanding Power and Professional Elegance',
-    image: '/images/fleet-gmc-denali-car.png',
+    image: '/images/fleet-gmc-denali-car.webp',
     specs: {
       seating: '7 Luxury Leather Seats',
       climate: 'Tri-Zone Climate Control',

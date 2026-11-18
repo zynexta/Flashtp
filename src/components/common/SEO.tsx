@@ -13,7 +13,7 @@ export interface SEOProps {
 export const SEO: React.FC<SEOProps> = ({
   title,
   description = 'Flash Transport Passengers By Bus LLC - Premier bus rental, corporate staff transportation, school buses, and luxury vehicle hire across Abu Dhabi, Dubai, and UAE.',
-  image = '/images/hero-abu-dhabi-bus.jpg',
+  image = '/images/hero-abu-dhabi-bus.webp',
   type = 'website',
   schema,
 }) => {
@@ -64,8 +64,8 @@ export const SEO: React.FC<SEOProps> = ({
       name: COMPANY_CONTACT.legalName,
       alternateName: COMPANY_CONTACT.brandName,
       url: 'https://flashtp.com',
-      logo: 'https://flashtp.com/images/flash-transport-logo.png',
-      image: 'https://flashtp.com/images/hero-abu-dhabi-bus.jpg',
+      logo: 'https://flashtp.com/images/flash-transport-logo.webp',
+      image: 'https://flashtp.com/images/hero-abu-dhabi-bus.webp',
       telephone: COMPANY_CONTACT.phone,
       email: COMPANY_CONTACT.email,
       address: {

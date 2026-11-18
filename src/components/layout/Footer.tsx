@@ -98,7 +98,7 @@ export const Footer: React.FC = () => {
             <div className="lg:col-span-4 space-y-4 sm:space-y-5">
               <Link to={ROUTES.HOME} className="inline-block group">
                 <img
-                  src="/images/flash-transport-logo-white.png?v=3"
+                  src="/images/flash-transport-logo-white.webp?v=3"
                   alt="Flash Transport Passengers By Bus LLC"
                   className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-[1.02]"
                 />

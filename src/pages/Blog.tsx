@@ -23,7 +23,7 @@ export const Blog: React.FC = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/blog-hero.jpg"
+            src="/images/blog-hero.webp"
             alt="Flash Transport UAE Industry Insights & Guides"
             className="w-full h-full object-cover object-[center_right] sm:object-right"
           />

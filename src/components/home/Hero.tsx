@@ -22,24 +22,24 @@ export const HERO_SLIDES: HeroSlide[] = [
   {
     id: 'school-bus-fleet',
     name: 'School Bus Fleet',
-    image: '/images/hero-school-bus-fleet.jpg?v=6',
-    mobileImage: '/images/hero-mobile-school-bus.jpg',
+    image: '/images/hero-school-bus-fleet.webp?v=6',
+    mobileImage: '/images/hero-mobile-school-bus.webp',
     alt: 'Flash Transport Certified Modern School Bus on Abu Dhabi Corniche',
     positionClass: 'object-center lg:object-[82%_center]'
   },
   {
     id: 'cadillac-limousine',
     name: 'Cadillac Escalade',
-    image: '/images/hero-cadillac-limousine.jpg?v=2',
-    mobileImage: '/images/hero-mobile-cadillac-escalade.jpg',
+    image: '/images/hero-cadillac-limousine.webp?v=2',
+    mobileImage: '/images/hero-mobile-cadillac-escalade.webp',
     alt: 'Flash Transport Black Cadillac Escalade Luxury SUV in Abu Dhabi at Sunset',
     positionClass: 'object-[center_right] sm:object-right'
   },
   {
     id: 'luxury-bus',
     name: 'Luxury Coach Bus',
-    image: '/images/dubai-hero-luxury-coach.jpg',
-    mobileImage: '/images/hero-mobile-luxury-coach.jpg',
+    image: '/images/dubai-hero-luxury-coach.webp',
+    mobileImage: '/images/hero-mobile-luxury-coach.webp',
     alt: 'Flash Transport Luxury Coach Bus with Dubai Skyline and Burj Khalifa at Sunset',
     positionClass: 'object-[62%_center]'
   }
@@ -277,7 +277,7 @@ export const Hero: React.FC = () => {
                 title="Emirates International Accreditation Centre (EIAC) & EQCS Triple ISO Certified"
               >
                 <img
-                  src="/images/cert-eiac-eqcs.jpg"
+                  src="/images/cert-eiac-eqcs.webp"
                   alt="EIAC and EQCS Triple ISO 9001, 14001, 45001 Certification"
                   className="h-full w-auto max-w-[125px] sm:max-w-[190px] lg:max-w-[215px] object-contain"
                 />
@@ -288,7 +288,7 @@ export const Hero: React.FC = () => {
                 title="Certified In-Country Value (ICV) Program UAE Supplier"
               >
                 <img
-                  src="/images/cert-icv.jpg"
+                  src="/images/cert-icv.webp"
                   alt="In-Country Value (ICV) UAE Supplier Certificate"
                   className="h-full w-auto max-w-[60px] sm:max-w-[95px] lg:max-w-[105px] object-contain"
                 />

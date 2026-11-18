@@ -36,7 +36,7 @@ export const About: React.FC = () => {
         {/* 1. Background Image: Dedicated Mobile Portrait vs Desktop Panoramic Banner */}
         {/* Mobile View: Dedicated Vertical Portrait Image (Not Cropped Desktop) */}
         <img
-          src="/images/about-hero-mobile.jpg"
+          src="/images/about-hero-mobile.webp"
           alt="Flash Transport Luxury Coach Bus in Abu Dhabi"
           className="w-full h-full object-cover object-[center_top] md:hidden absolute inset-0 z-0"
         />
@@ -44,7 +44,7 @@ export const About: React.FC = () => {
         {/* Desktop View: Full-Width Panoramic Background Image */}
         <div
           aria-hidden="true"
-          style={{ backgroundImage: "url('/images/about-hero-banner.jpg?v=6')" }}
+          style={{ backgroundImage: "url('/images/about-hero-banner.webp?v=6')" }}
           className="hidden md:block absolute inset-0 z-0 bg-no-repeat bg-cover bg-[position:right_center]"
         />
 
@@ -222,7 +222,7 @@ export const About: React.FC = () => {
                 <div className="flex items-center gap-4 border-b border-[#E8EAF0] pb-5">
                   <div className="bg-white rounded-xl p-2 border border-[#E8EAF0] shadow-xs flex-shrink-0">
                     <img
-                      src="/images/ohms.png"
+                      src="/images/ohms.webp"
                       alt="EIAC Certification"
                       className="h-12 w-auto object-contain"
                     />
@@ -272,7 +272,7 @@ export const About: React.FC = () => {
                 <div className="pt-1">
                   <div className="bg-white rounded-xl border border-[#E8EAF0] p-3 shadow-xs">
                     <img
-                      src="/images/cert-eiac-eqcs.jpg"
+                      src="/images/cert-eiac-eqcs.webp"
                       alt="ISO Quality Certificate Badge — EIAC & EQCS"
                       className="w-full h-auto object-contain max-h-28 mx-auto"
                     />
@@ -444,7 +444,7 @@ export const About: React.FC = () => {
             {/* Right-Side Luxury Coach Fleet Lineup Image */}
             <div className="hidden md:block absolute inset-y-0 right-0 w-[56%] lg:w-[54%] pointer-events-none select-none">
               <img
-                src="/images/service-staff-transport.jpg"
+                src="/images/service-staff-transport.webp"
                 alt="Flash Transport Luxury Coach Fleet Lineup"
                 className="w-full h-full object-cover object-[center_65%]"
               />
@@ -456,7 +456,7 @@ export const About: React.FC = () => {
             {/* Mobile Top/Background Subtle Image Fallback */}
             <div className="md:hidden absolute inset-0 opacity-20 pointer-events-none select-none">
               <img
-                src="/images/service-staff-transport.jpg"
+                src="/images/service-staff-transport.webp"
                 alt=""
                 aria-hidden="true"
                 className="w-full h-full object-cover object-center"

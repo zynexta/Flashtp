@@ -297,7 +297,7 @@ export const WhyChooseUs: React.FC = () => {
             {/* Right Bus Photo Integration with Soft Gradient Fade */}
             <div className="absolute right-0 top-0 bottom-0 w-full sm:w-[58%] lg:w-[56%] overflow-hidden z-0 pointer-events-none select-none">
               <img
-                src="/images/about-hero-banner.jpg"
+                src="/images/about-hero-banner.webp"
                 alt="Flash Transport Corporate Luxury Coach Fleet"
                 className="w-full h-full object-cover object-[70%_center] transition-transform duration-700 ease-out group-hover:scale-105"
               />
@@ -364,7 +364,7 @@ export const WhyChooseUs: React.FC = () => {
             {/* Right School Bus Photo Integration */}
             <div className="absolute right-0 top-0 bottom-0 w-full sm:w-[58%] lg:w-[56%] overflow-hidden z-0 pointer-events-none select-none">
               <img
-                src="/images/hero-school-bus-fleet.jpg"
+                src="/images/hero-school-bus-fleet.webp"
                 alt="Flash Transport ADEK Certified School Bus Fleet"
                 className="w-full h-full object-cover object-[80%_center] transition-transform duration-700 ease-out group-hover:scale-105"
               />

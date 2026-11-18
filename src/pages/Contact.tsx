@@ -19,7 +19,7 @@ export const Contact: React.FC = () => {
         {/* Background High-Resolution Corporate Headquarters Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/contact-hero.jpg"
+            src="/images/contact-hero.webp"
             alt="Flash Transport Contact Abu Dhabi Headquarters"
             className="w-full h-full object-cover object-[center_right] sm:object-right brightness-[1.05] contrast-[1.02]"
           />
