@@ -224,7 +224,7 @@ export const Hero: React.FC = () => {
       {/* 3. LAYER: Main Content & Headline (Upper Half on Mobile, Left Column on Desktop) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 min-[360px]:pt-28 min-[390px]:pt-32 sm:pt-24 lg:pt-28 pb-80 sm:pb-24 lg:pb-28 relative z-20 w-full flex-1 flex flex-col justify-start sm:justify-center">
         <div className="max-w-[540px] lg:max-w-[560px] xl:max-w-[600px] text-left space-y-3 sm:space-y-5">
-          
+
           {/* Eyebrow */}
           <div className="flex items-center gap-2 sm:gap-2.5">
             <span className="w-5 sm:w-6 h-[2px] bg-[#E51E32] inline-block rounded-full"></span>

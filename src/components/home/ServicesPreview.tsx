@@ -30,7 +30,7 @@ export const ServicesPreview: React.FC = () => {
   }, [displayedServices]);
 
   return (
-    <section className="py-20 sm:py-28 bg-[#FAFAFB] border-b border-[#E7E9ED] relative overflow-hidden select-none">
+    <section className="py-14 sm:py-20 lg:py-28 bg-[#FAFAFB] border-b border-[#E7E9ED] relative overflow-hidden select-none">
       
       {/* 1. Background Decorative Element: Top-Left Subtle Flowing Waves (Soft, Organic & Tapered) */}
       <div className="absolute top-0 left-0 z-0 pointer-events-none w-72 sm:w-[480px] lg:w-[620px] h-44 sm:h-56 lg:h-64 overflow-hidden select-none">
@@ -126,42 +126,42 @@ export const ServicesPreview: React.FC = () => {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 xs:px-5 sm:px-6 lg:px-8 relative z-10">
         
         {/* 3. Section Heading matching Reference Image */}
-        <div className="text-center mb-12 sm:mb-14">
+        <div className="text-center mb-8 sm:mb-12 md:mb-14">
           
           {/* Eyebrow: — TAILORED MOBILITY SOLUTIONS — with tapered flanking accent lines */}
-          <div className="inline-flex items-center justify-center gap-3 mb-3">
-            <span className="w-6 sm:w-8 h-[2px] bg-gradient-to-r from-transparent to-[#D92332] rounded-full inline-block" />
-            <span className="font-sans text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-[#D92332]">
+          <div className="inline-flex items-center justify-center gap-2.5 sm:gap-3 mb-2.5 sm:mb-3">
+            <span className="w-5 sm:w-8 h-[2px] bg-gradient-to-r from-transparent to-[#D92332] rounded-full inline-block" />
+            <span className="font-sans text-[10.5px] sm:text-xs font-bold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#D92332]">
               TAILORED MOBILITY SOLUTIONS
             </span>
-            <span className="w-6 sm:w-8 h-[2px] bg-gradient-to-l from-transparent to-[#D92332] rounded-full inline-block" />
+            <span className="w-5 sm:w-8 h-[2px] bg-gradient-to-l from-transparent to-[#D92332] rounded-full inline-block" />
           </div>
 
           {/* Main Heading: Comprehensive Transportation Services */}
-          <h2 className="font-sans text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-tight text-[#0F172A] leading-[1.18]">
+          <h2 className="font-sans text-2xl min-[360px]:text-[26px] sm:text-4xl lg:text-[44px] font-extrabold tracking-tight text-[#0F172A] leading-[1.22] sm:leading-[1.18] max-w-xl sm:max-w-none mx-auto">
             Comprehensive Transportation <span className="text-[#D92332]">Services</span>
           </h2>
 
           {/* Subtitle */}
-          <p className="mt-3.5 sm:mt-4 font-body text-sm sm:text-[15px] text-[#4B5563] max-w-2xl sm:max-w-3xl mx-auto leading-relaxed font-normal">
+          <p className="mt-2.5 sm:mt-4 font-body text-[13px] sm:text-[15px] text-[#4B5563] max-w-2xl sm:max-w-3xl mx-auto leading-relaxed font-normal px-1">
             From corporate employee bus networks to executive car rentals and cross-emirate tours, explore our specialized fleet solutions designed for the UAE.
           </p>
 
           {/* Small Center Red Accent Line */}
-          <div className="w-12 h-[3px] bg-[#D92332] rounded-full mx-auto mt-4" />
+          <div className="w-10 sm:w-12 h-[2.5px] sm:h-[3px] bg-[#D92332] rounded-full mx-auto mt-3.5 sm:mt-4" />
         </div>
 
-        {/* 4A. Mobile View Only: 2 Rows with Smooth Horizontal Touch Scroll */}
-        <div className="md:hidden overflow-x-auto pb-5 pt-1 -mx-4 px-4 scrollbar-none snap-x snap-mandatory">
-          <div className="grid grid-rows-2 grid-flow-col auto-cols-[275px] xs:auto-cols-[295px] gap-3.5 w-max">
+        {/* 4A. Mobile View Only: 2 Rows with Smooth Horizontal Touch Scroll (Contained with 16-20px Side Margins) */}
+        <div className="md:hidden overflow-x-auto pb-6 pt-1 scrollbar-none snap-x snap-mandatory">
+          <div className="grid grid-rows-2 grid-flow-col auto-cols-[270px] min-[360px]:auto-cols-[280px] xs:auto-cols-[290px] sm:auto-cols-[305px] gap-3.5 xs:gap-4 w-max pr-4 xs:pr-5">
             {mobileTwoRowServices.map((service) => (
               <ServiceCard
                 key={`mobile-${service.id}`}
                 service={service}
-                className="snap-start w-[275px] xs:w-[295px] h-full"
+                className="snap-start w-[270px] min-[360px]:w-[280px] xs:w-[290px] sm:w-[305px] h-full"
               />
             ))}
           </div>
