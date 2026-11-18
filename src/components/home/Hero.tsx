@@ -30,10 +30,10 @@ export const HERO_SLIDES: HeroSlide[] = [
   {
     id: 'cadillac-limousine',
     name: 'Cadillac Escalade',
-    image: '/images/hero-cadillac-limousine.webp?v=2',
+    image: '/images/hero-cadillac-limousine.webp?v=3',
     mobileImage: '/images/hero-mobile-cadillac-escalade.webp',
     alt: 'Flash Transport Black Cadillac Escalade Luxury SUV in Abu Dhabi at Sunset',
-    positionClass: 'object-[center_right] sm:object-right'
+    positionClass: 'object-cover sm:object-right sm:scale-[1.12] md:scale-[1.16] lg:scale-[1.20] xl:scale-[1.22] sm:translate-x-[4%] md:translate-x-[6%] lg:translate-x-[8%] xl:translate-x-[9%] sm:origin-right'
   },
   {
     id: 'luxury-bus',
