@@ -49,7 +49,7 @@ export const ContactForm: React.FC = () => {
 
   const generateWhatsAppMessage = () => {
     const text = `*New Contact Enquiry via Website*\nName: ${formData.name || 'Visitor'}\nPhone: ${formData.phone || 'N/A'}\nSubject: ${formData.subject}\nMessage: ${formData.message || 'I would like to inquire about Flash Transport services.'}`;
-    const cleanPhone = COMPANY_CONTACT.phone.replace(/[^0-9]/g, '');
+    const cleanPhone = COMPANY_CONTACT.whatsapp.replace(/[^0-9]/g, '');
     return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(text)}`;
   };
 

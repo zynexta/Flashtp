@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
   phone: '+971 2 554 8788',
   phoneClean: '97125548788',
   email: 'info@flashtp.com',
-  whatsapp: '+971 2 554 8788',
+  whatsapp: '+971 50 268 5634',
   address: '704, Al Junaibi Building, opposite Al Zahiyah Bus Station, Al Meena Street, TCA, Abu Dhabi - UAE',
   operatingHours: '24/7 Dispatch & Support | Office: Sat - Thu, 8:00 AM - 6:00 PM',
   certifications: [
@@ -21,7 +21,7 @@ export const SITE_CONFIG = {
     facebook: 'https://facebook.com/flashtp',
     linkedin: 'https://linkedin.com/company/flash-transport',
     instagram: 'https://instagram.com/flashtransport',
-    whatsapp: 'https://wa.me/97125548788',
+    whatsapp: 'https://wa.me/971502685634',
   },
 };
 

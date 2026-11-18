@@ -6,7 +6,7 @@ export const COMPANY_CONTACT: CompanyContact = {
   phone: '+971 2 554 8788',
   phoneDisplay: '+971 2 554 8788',
   email: 'info@flashtp.com',
-  whatsapp: '+971 2 554 8788',
+  whatsapp: '+971 50 268 5634',
   address: {
     office: 'Office 704',
     building: 'Al Junaibi Building',

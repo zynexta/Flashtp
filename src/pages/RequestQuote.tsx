@@ -83,7 +83,7 @@ export const RequestQuote: React.FC = () => {
                   Need a rapid bus quote for today or tomorrow? Message our on-duty fleet coordinator directly on WhatsApp.
                 </p>
                 <a
-                  href={`https://wa.me/${COMPANY_CONTACT.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hello Flash Transport, I need an urgent transport quotation.')}`}
+                  href={`https://wa.me/${COMPANY_CONTACT.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hello Flash Transport, I need an urgent transport quotation.')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition-colors shadow-sm"

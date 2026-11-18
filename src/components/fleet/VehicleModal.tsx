@@ -31,7 +31,7 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
   if (!vehicle) return null;
 
   const imgUrl = getAssetUrl(vehicle.imageKey);
-  const cleanPhone = COMPANY_CONTACT.phone.replace(/[^0-9]/g, '');
+  const cleanPhone = COMPANY_CONTACT.whatsapp.replace(/[^0-9]/g, '');
   const waText = `Hello Flash Transport! I am interested in inquiring about the ${vehicle.name} (${vehicle.capacity}).`;
   const waLink = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(waText)}`;
 

@@ -5,7 +5,7 @@ import { COMPANY_CONTACT } from '../../data/company';
 export const WhatsAppWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const cleanPhone = COMPANY_CONTACT.phone.replace(/[^0-9]/g, '');
+  const cleanPhone = COMPANY_CONTACT.whatsapp.replace(/[^0-9]/g, '');
 
   const getWaLink = (message: string) => {
     return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;

@@ -71,7 +71,7 @@ export const QuoteForm: React.FC = () => {
 
   const getWhatsAppSummaryLink = () => {
     const text = `*New Transport Quote Request [Ref: ${quoteReference || 'Pending'}]*\nName: ${formData.fullName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.serviceRequired}\nVehicle: ${formData.vehicleType}\nPassengers: ${formData.passengers}\nPickup: ${formData.pickupLocation}\nDestination: ${formData.destination}\nDate: ${formData.travelDate}\nDuration: ${formData.duration}\nRequirements: ${formData.additionalRequirements || 'None'}`;
-    const cleanPhone = COMPANY_CONTACT.phone.replace(/[^0-9]/g, '');
+    const cleanPhone = COMPANY_CONTACT.whatsapp.replace(/[^0-9]/g, '');
     return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(text)}`;
   };
 
