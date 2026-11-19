@@ -44,7 +44,7 @@ export const About: React.FC = () => {
         {/* Desktop View: Full-Width Panoramic Background Image */}
         <div
           aria-hidden="true"
-          style={{ backgroundImage: "url('/images/about-hero-banner.webp?v=6')" }}
+          style={{ backgroundImage: "url('/images/about-hero-banner.webp?v=7')" }}
           className="hidden md:block absolute inset-0 z-0 bg-no-repeat bg-cover bg-[position:right_center]"
         />
 
