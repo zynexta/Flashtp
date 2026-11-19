@@ -55,7 +55,9 @@ export const App: React.FC = () => {
 
           {/* Contact & Quote Pages */}
           <Route path={ROUTES.CONTACT} element={<Contact />} />
+          <Route path="/contact-us" element={<Contact />} />
           <Route path="/contact" element={<Navigate to={ROUTES.CONTACT} replace />} />
+          <Route path="/contact/" element={<Navigate to={ROUTES.CONTACT} replace />} />
           <Route path={ROUTES.REQUEST_QUOTE} element={<RequestQuote />} />
           <Route path="/request-quote" element={<Navigate to={ROUTES.REQUEST_QUOTE} replace />} />
           <Route path="/request-a-quote" element={<Navigate to={ROUTES.REQUEST_QUOTE} replace />} />

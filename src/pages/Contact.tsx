@@ -6,6 +6,7 @@ import { ContactForm } from '../components/forms/ContactForm';
 import { Phone, Mail, MapPin, Clock, MessageSquare, ShieldCheck, ArrowRight, Building } from 'lucide-react';
 import { Button } from '../components/common/Button';
 import { ROUTES } from '../config/routes';
+import { SEO } from '../components/common/SEO';
 
 export const Contact: React.FC = () => {
   useEffect(() => {
@@ -14,6 +15,11 @@ export const Contact: React.FC = () => {
 
   return (
     <div className="bg-[#F6F7F9]">
+      <SEO
+        title="Contact Us | Abu Dhabi Bus Rental Office"
+        description="Contact Flash Transport Abu Dhabi headquarters for professional bus rentals, corporate staff transport contracts, and luxury vehicle hire. 24/7 operations desk."
+        canonical="https://www.flashtp.com/contact-us/"
+      />
       {/* Contact Hero */}
       <section className="relative bg-[#0B0D12] text-white pt-28 sm:pt-36 pb-16 sm:pb-24 overflow-hidden select-none">
         {/* Background High-Resolution Corporate Headquarters Image */}

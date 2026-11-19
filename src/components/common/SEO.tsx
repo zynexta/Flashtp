@@ -8,6 +8,7 @@ export interface SEOProps {
   image?: string;
   type?: 'website' | 'article';
   schema?: Record<string, any>;
+  canonical?: string;
 }
 
 export const SEO: React.FC<SEOProps> = ({
@@ -16,9 +17,16 @@ export const SEO: React.FC<SEOProps> = ({
   image = '/images/hero-abu-dhabi-bus.webp',
   type = 'website',
   schema,
+  canonical,
 }) => {
   const { pathname } = useLocation();
-  const canonicalUrl = `https://flashtp.com${pathname}`;
+  const defaultCanonical = pathname.startsWith('/contact')
+    ? 'https://www.flashtp.com/contact-us/'
+    : pathname === '/'
+      ? 'https://www.flashtp.com/'
+      : `https://www.flashtp.com${pathname.endsWith('/') ? pathname : `${pathname}/`}`;
+
+  const canonicalUrl = canonical || defaultCanonical;
   const fullTitle = title
     ? `${title} | Flash Transport Abu Dhabi`
     : 'Flash Transport | Premier Bus Rental & Passenger Transport Abu Dhabi';
@@ -49,7 +57,16 @@ export const SEO: React.FC<SEOProps> = ({
     setMetaTag('twitter:description', description);
     setMetaTag('twitter:image', image);
 
-    // 3. Inject Structured Data JSON-LD
+    // 3. Update or create canonical link tag
+    let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute('href', canonicalUrl);
+
+    // 4. Inject Structured Data JSON-LD
     let scriptTag = document.getElementById('json-ld-schema') as HTMLScriptElement | null;
     if (!scriptTag) {
       scriptTag = document.createElement('script');
