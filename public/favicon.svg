@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="ft-red-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E51E32" />
+      <stop offset="100%" stop-color="#C41E28" />
+    </linearGradient>
+    <linearGradient id="ft-red-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B91F2D" />
+      <stop offset="100%" stop-color="#931520" />
+    </linearGradient>
+  </defs>
+  <!-- Top Left Dynamic Triangle pointing Left -->
+  <polygon points="50,155 175,25 175,255" fill="url(#ft-red-light)" />
+  <!-- Bottom Right Folded Triangle pointing Right -->
+  <polygon points="185,225 350,355 185,485" fill="url(#ft-red-light)" />
+  <!-- Facet fold on bottom triangle -->
+  <polygon points="185,355 350,355 185,485" fill="url(#ft-red-dark)" opacity="0.6" />
+</svg>
