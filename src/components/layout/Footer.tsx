@@ -268,7 +268,7 @@ export const Footer: React.FC = () => {
                 to={ROUTES.CONTACT}
                 className="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-white/75 hover:text-white transition-colors"
               >
-                Contact &amp; Location
+                Contact Us
               </Link>
             </div>
           </div>

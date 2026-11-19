@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+ import React, { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Breadcrumbs } from '../components/common/Breadcrumbs';
 import { SectionHeading } from '../components/common/SectionHeading';
 import { COMPANY_CONTACT } from '../data/company';
@@ -9,9 +10,15 @@ import { ROUTES } from '../config/routes';
 import { SEO } from '../components/common/SEO';
 
 export const Contact: React.FC = () => {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
   useEffect(() => {
     document.title = 'Contact Us | Abu Dhabi Bus Rental Office | Flash Transport';
-  }, []);
+    if (pathname === '/contact-us') {
+      navigate('/contact-us/', { replace: true });
+    }
+  }, [pathname, navigate]);
 
   return (
     <div className="bg-[#F6F7F9]">

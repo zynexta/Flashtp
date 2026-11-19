@@ -61,7 +61,7 @@ export const FOOTER_QUICK_LINKS = [
   { label: 'Our Services Overview', href: ROUTES.SERVICES },
   { label: 'Vehicle Fleet Catalogue', href: ROUTES.FLEET },
   { label: 'Latest News & Guides', href: ROUTES.BLOG },
-  { label: 'Contact & Location', href: ROUTES.CONTACT },
+  { label: 'Contact Us', href: ROUTES.CONTACT },
   { label: 'Request a Corporate Quote', href: ROUTES.REQUEST_QUOTE }
 ];
 
