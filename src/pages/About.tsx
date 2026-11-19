@@ -140,25 +140,29 @@ export const About: React.FC = () => {
             />
 
             {/* 2. Experience Badge */}
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-0.5 sm:py-1.5 rounded-full bg-[#FEECEE] border border-[#F8A5AC]/40 text-[#E51E32] text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-bold tracking-wider uppercase select-none shadow-xs">
-              <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-[#E51E32]" />
+            <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-[#FEECEE]/90 border border-[#F8A5AC]/50 text-[#E51E32] text-[11px] sm:text-xs font-bold tracking-[0.14em] uppercase select-none shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-[#E51E32] animate-pulse" />
               <span>20+ Years of Transport Leadership</span>
             </div>
 
-            {/* 3. Main Heading: 27-30px on mobile, 62-68px on desktop */}
-            <h1 className="font-sans text-[26px] min-[360px]:text-[28px] xs:text-[30px] sm:text-[44px] md:text-[54px] lg:text-[62px] xl:text-[68px] font-extrabold text-[#171B23] tracking-[-0.025em] leading-[1.12] sm:leading-[1.0] max-w-[640px]">
-              <span className="block">Pioneering Passenger</span>
-              <span className="block">
-                Mobility in{' '}
-                <span className="text-[#E51E32]">Abu Dhabi &amp;</span>
+            {/* 3. Main Heading: Premium Editorial Typography matching Hero */}
+            <h1 className="text-[28px] min-[360px]:text-[32px] xs:text-[34px] sm:text-[46px] md:text-[54px] lg:text-[62px] xl:text-[68px] tracking-[-0.02em] leading-[1.14] sm:leading-[1.08] max-w-[640px]">
+              <span className="font-serif font-bold text-[#171B23] block">
+                Pioneering Passenger
               </span>
-              <span className="text-[#E51E32] block">
-                Across the UAE
+              <span className="font-serif font-bold text-[#171B23] block">
+                Mobility in{' '}
+                <span className="font-serif italic font-bold text-[#E51E32]">
+                  Abu Dhabi
+                </span>
+              </span>
+              <span className="font-serif italic font-bold text-[#E51E32] block mt-0.5 sm:mt-1">
+                &amp; Across the UAE
               </span>
             </h1>
 
-            {/* 4. Company Description: 13-14px on mobile, 18-19px on desktop */}
-            <p className="font-body text-[12.5px] min-[360px]:text-[13px] sm:text-[17px] lg:text-[18px] xl:text-[19px] text-[#2D3748] leading-[1.48] sm:leading-[1.5] max-w-[320px] xs:max-w-[360px] sm:max-w-[580px] font-normal pt-0.5 sm:pt-2">
+            {/* 4. Company Description */}
+            <p className="font-body text-[13px] min-[360px]:text-[13.5px] sm:text-[16px] lg:text-[17px] text-[#4A5160] leading-[1.6] sm:leading-[1.65] max-w-[340px] xs:max-w-[380px] sm:max-w-[560px] font-normal pt-1 sm:pt-2">
               Flash Transport Passengers By Bus LLC specializes in customized passenger transport solutions for corporate enterprises, educational institutions, government bodies, and private charters.
             </p>
           </div>
