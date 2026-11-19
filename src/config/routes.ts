@@ -34,6 +34,7 @@ export const ROUTE_REDIRECTS: Record<string, string> = {
   '/fleet/': ROUTES.FLEET,
   '/our-fleet': ROUTES.FLEET,
   '/our-fleet/': ROUTES.FLEET,
+  '/services': ROUTES.SERVICES,
   '/contact-us': ROUTES.CONTACT,
   '/contact': ROUTES.CONTACT,
   '/contact/': ROUTES.CONTACT,

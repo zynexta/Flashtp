@@ -11,6 +11,21 @@
       "source": "/contact/",
       "destination": "/contact-us/",
       "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/projects",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/",
+      "destination": "/services/",
+      "permanent": true
     }
   ],
   "rewrites": [

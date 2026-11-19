@@ -38,8 +38,11 @@ export const App: React.FC = () => {
           <Route path="/best-bus-rental-companies-in-abu-dhabi-and-dubai/" element={<About />} />
           <Route path="/best-bus-rental-companies-in-abu-dhabi-and-dubai" element={<About />} />
 
+          {/* Services Pages */}
           <Route path={ROUTES.SERVICES} element={<Services />} />
           <Route path="/services" element={<Navigate to={ROUTES.SERVICES} replace />} />
+          <Route path="/projects" element={<Navigate to={ROUTES.SERVICES} replace />} />
+          <Route path="/projects/" element={<Navigate to={ROUTES.SERVICES} replace />} />
 
           {/* Fleet Pages */}
           <Route path={ROUTES.FLEET} element={<Fleet />} />

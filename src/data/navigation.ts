@@ -15,7 +15,7 @@ export const MAIN_NAV_LINKS: NavLinkItem[] = [
   { label: 'Home', href: ROUTES.HOME },
   { label: 'About Us', href: ROUTES.ABOUT },
   {
-    label: 'Our Services',
+    label: 'Services',
     href: ROUTES.SERVICES,
     children: [
       {
@@ -58,7 +58,7 @@ export const MAIN_NAV_LINKS: NavLinkItem[] = [
 export const FOOTER_QUICK_LINKS = [
   { label: 'Home', href: ROUTES.HOME },
   { label: 'About Flash Transport', href: ROUTES.ABOUT },
-  { label: 'Our Services Overview', href: ROUTES.SERVICES },
+  { label: 'Services', href: ROUTES.SERVICES },
   { label: 'Vehicle Fleet Catalogue', href: ROUTES.FLEET },
   { label: 'Latest News & Guides', href: ROUTES.BLOG },
   { label: 'Contact Us', href: ROUTES.CONTACT },

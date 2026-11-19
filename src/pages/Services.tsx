@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Breadcrumbs } from '../components/common/Breadcrumbs';
 import { SectionHeading } from '../components/common/SectionHeading';
 import { SERVICES } from '../data/services';
@@ -8,14 +8,26 @@ import { ShieldCheck, ArrowRight, Phone, CheckCircle2, Award, Bus, Clock, Gem } 
 import { Button } from '../components/common/Button';
 import { ROUTES } from '../config/routes';
 import { COMPANY_CONTACT } from '../data/company';
+import { SEO } from '../components/common/SEO';
 
 export const Services: React.FC = () => {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
   useEffect(() => {
     document.title = 'Our Services | Commercial Bus Rental & Transport Abu Dhabi | Flash Transport';
-  }, []);
+    if (pathname === '/services') {
+      navigate('/services/', { replace: true });
+    }
+  }, [pathname, navigate]);
 
   return (
     <div className="bg-[#FAFAFB] text-[#111827]">
+      <SEO
+        title="Our Services | Commercial Bus Rental & Transport Abu Dhabi"
+        description="Comprehensive commercial transport solutions in Abu Dhabi & UAE: School bus rentals, corporate staff transport, executive chauffeured cars, intercity tours, and daily bus services."
+        canonical="https://www.flashtp.com/services/"
+      />
       {/* 1. Mobile Services Hero Header (sm:hidden): Exact Match to Reference Visual */}
       <section className="sm:hidden relative bg-[#090B10] text-white pt-24 pb-72 overflow-hidden select-none min-h-[660px]">
         {/* Background Mobile Vehicle Image with Cadillac Escalade & Dusk Skyline */}
