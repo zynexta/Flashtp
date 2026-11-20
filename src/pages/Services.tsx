@@ -126,36 +126,45 @@ export const Services: React.FC = () => {
             />
           </div>
 
-          <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-white text-xs font-semibold tracking-wider uppercase">
-              <span className="w-2 h-2 rounded-full bg-[#D92332] animate-pulse" />
-              <span>Full-Spectrum Commercial Transport • Abu Dhabi &amp; Dubai</span>
+          <div className="max-w-3xl space-y-5 sm:space-y-6">
+            {/* Eyebrow - Home Hero Vibe */}
+            <div className="flex items-center gap-2 sm:gap-2.5">
+              <span className="w-5 sm:w-6 h-[2px] bg-[#E51E32] inline-block rounded-full" />
+              <span className="font-sans text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-white/95 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
+                FULL-SPECTRUM COMMERCIAL TRANSPORT • ABU DHABI &amp; DUBAI
+              </span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12] drop-shadow-sm">
-              Comprehensive Bus Rental &amp;{' '}
-              <span className="text-[#D92332]">Passenger Mobility</span> Solutions
+            {/* Main Headline - Home Hero Vibe */}
+            <h1 className="text-3xl sm:text-5xl lg:text-[56px] xl:text-[62px] tracking-[-0.015em] leading-[1.12] sm:leading-[1.1] text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] max-w-2xl">
+              <span className="font-serif font-bold text-white block">
+                Comprehensive Bus Rental
+              </span>
+              <span className="font-serif italic font-bold text-[#E51E32] block mt-1 sm:mt-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+                &amp; Passenger Mobility Solutions
+              </span>
             </h1>
 
-            <p className="text-base sm:text-lg lg:text-xl text-neutral-300 leading-relaxed font-normal max-w-2xl">
+            {/* Subtitle / Description - Home Hero Vibe */}
+            <p className="font-body text-[14px] sm:text-[16px] lg:text-[17px] text-white/95 max-w-xl leading-[1.6] sm:leading-[1.65] font-normal drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
               From contract corporate employee transit to private executive charters and certified school buses, Flash Transport delivers safety, comfort, and unmatched punctuality across Abu Dhabi, Dubai, and all Emirates.
             </p>
 
-            {/* CTA Buttons Row with Reduced Border Radius (rounded-xl) */}
-            <div className="pt-2 flex flex-wrap items-center gap-4">
+            {/* CTA Buttons Row - Home Hero Vibe */}
+            <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
               <Link
                 to={ROUTES.REQUEST_QUOTE}
-                className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-xl bg-[#D92332] hover:bg-[#B91F2D] text-white font-semibold text-sm sm:text-[15px] shadow-lg shadow-[#D92332]/35 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                className="min-h-[44px] inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-[#E51E32] hover:bg-[#C91829] text-white font-sans font-bold text-xs sm:text-[15px] shadow-lg shadow-[#E51E32]/35 transition-all duration-200 active:scale-95 flex-shrink-0"
               >
                 <span>Request Fleet Consultation</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </Link>
 
               <a
                 href={`tel:${COMPANY_CONTACT.phone}`}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm sm:text-[15px] border border-white/25 backdrop-blur-md transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                className="min-h-[44px] inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-sans font-semibold text-xs sm:text-[15px] border border-white/25 backdrop-blur-md transition-all duration-200 active:scale-95 flex-shrink-0"
               >
-                <Phone className="w-4 h-4 text-[#D92332]" />
+                <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E51E32]" />
                 <span>Call Operations: {COMPANY_CONTACT.phoneDisplay}</span>
               </a>
             </div>

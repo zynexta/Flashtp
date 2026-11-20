@@ -131,8 +131,8 @@ export const About: React.FC = () => {
         </div>
 
         {/* 4. Centered Content Container with Left-Aligned Copy */}
-        <div className="max-w-[1500px] mx-auto w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-20">
-          <div className="w-full md:w-[62%] lg:w-[48%] xl:w-[45%] space-y-2 xs:space-y-2.5 sm:space-y-5 text-left max-w-[640px]">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 relative z-20">
+          <div className="w-full md:w-[62%] lg:w-[52%] xl:w-[48%] space-y-2 xs:space-y-2.5 sm:space-y-5 text-left max-w-[640px]">
             {/* 1. Breadcrumb */}
             <Breadcrumbs
               items={[{ label: 'About Us' }]}
