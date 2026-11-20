@@ -108,7 +108,7 @@ export const Services: React.FC = () => {
         {/* Background Image Layer with Sophisticated Contrast Vignettes */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/dubai-hero-luxury-coach.webp"
+            src="/images/dubai-hero-luxury-coach.webp?v=2"
             alt="Flash Transport Commercial Fleet UAE"
             className="w-full h-full object-cover object-center scale-[1.02]"
           />
