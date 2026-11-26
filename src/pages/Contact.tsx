@@ -154,9 +154,6 @@ export const Contact: React.FC = () => {
                     <p className="text-xs text-[#686D75]">
                       <span className="font-semibold text-[#191C22]">Office:</span> Mon – Sat, 9:00 AM – 5:00 PM
                     </p>
-                    <p className="text-xs text-[#686D75]">
-                      <span className="font-semibold text-[#191C22]">Sunday:</span> Closed
-                    </p>
                   </div>
                 </div>
               </div>

@@ -19,7 +19,7 @@ export const COMPANY_CONTACT: CompanyContact = {
   },
   workingHours: {
     days: 'Monday – Saturday',
-    hours: 'Mon – Sat: 9:00 AM – 5:00 PM (Sunday: Closed)',
+    hours: 'Mon – Sat: 9:00 AM – 5:00 PM',
     support: 'Monday – Saturday, 9:00 AM – 5:00 PM'
   },
   mapCoordinates: {
