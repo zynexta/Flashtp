@@ -149,13 +149,13 @@ export const Contact: React.FC = () => {
                   </div>
                   <div className="space-y-1">
                     <h3 className="text-sm font-bold text-[#191C22]">
-                      Operating & Dispatch Hours
+                      Operating Hours
                     </h3>
                     <p className="text-xs text-[#686D75]">
-                      <span className="font-semibold text-[#191C22]">Office:</span> Sat – Thu, 8:00 AM – 6:00 PM
+                      <span className="font-semibold text-[#191C22]">Office:</span> Mon – Sat, 9:00 AM – 5:00 PM
                     </p>
-                    <p className="text-xs font-semibold text-emerald-600">
-                      24/7 Operations & Emergency Fleet Dispatch
+                    <p className="text-xs text-[#686D75]">
+                      <span className="font-semibold text-[#191C22]">Sunday:</span> Closed
                     </p>
                   </div>
                 </div>

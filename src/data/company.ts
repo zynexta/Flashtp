@@ -18,9 +18,9 @@ export const COMPANY_CONTACT: CompanyContact = {
     full: '704, Al Junaibi Building, opposite Al Zahiyah Bus Station, Al Meena Street, TCA, Abu Dhabi - UAE'
   },
   workingHours: {
-    days: 'Saturday – Thursday (24/7 Operations Support)',
-    hours: '8:00 AM – 6:00 PM (Office) | 24/7 Fleet Dispatch',
-    support: '24/7 Dedicated Emergency & Logistics Support'
+    days: 'Monday – Saturday',
+    hours: 'Mon – Sat: 9:00 AM – 5:00 PM (Sunday: Closed)',
+    support: 'Monday – Saturday, 9:00 AM – 5:00 PM'
   },
   mapCoordinates: {
     lat: 24.4981,

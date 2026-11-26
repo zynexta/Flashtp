@@ -10,7 +10,7 @@ export const SITE_CONFIG = {
   email: 'info@flashtp.com',
   whatsapp: '+971 50 268 5634',
   address: '704, Al Junaibi Building, opposite Al Zahiyah Bus Station, Al Meena Street, TCA, Abu Dhabi - UAE',
-  operatingHours: '24/7 Dispatch & Support | Office: Sat - Thu, 8:00 AM - 6:00 PM',
+  operatingHours: 'Office: Mon - Sat, 9:00 AM - 5:00 PM | Sunday: Closed',
   certifications: [
     'ISO 9001:2015 Quality Management',
     'ISO 14001:2015 Environmental Management',
