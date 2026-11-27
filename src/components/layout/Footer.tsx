@@ -187,9 +187,6 @@ export const Footer: React.FC = () => {
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                     <span>Abu Dhabi Operations</span>
                   </h4>
-                  <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-[#E31E2B]/40 text-white/90 border border-[#E31E2B]/60">
-                    HQ Desk
-                  </span>
                 </div>
 
                 <div className="space-y-3.5 text-xs sm:text-[13px] text-white/80">
