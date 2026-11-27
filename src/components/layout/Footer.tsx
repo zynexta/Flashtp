@@ -224,10 +224,6 @@ export const Footer: React.FC = () => {
                     <Clock className="w-4 h-4 text-[#FF6B75] flex-shrink-0 mt-0.5" />
                     <div className="text-xs leading-relaxed">
                       <span className="text-white/75">{COMPANY_CONTACT.workingHours.hours}</span>
-                      <div className="text-emerald-300 font-semibold mt-1 flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                        <span>24/7 Rapid Dispatch Hotline</span>
-                      </div>
                     </div>
                   </div>
                 </div>
