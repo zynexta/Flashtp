@@ -24,7 +24,7 @@ export const Contact: React.FC = () => {
     <div className="bg-[#F6F7F9]">
       <SEO
         title="Contact Us | Abu Dhabi Bus Rental Office"
-        description="Contact Flash Transport Abu Dhabi headquarters for professional bus rentals, corporate staff transport contracts, and luxury vehicle hire. 24/7 operations desk."
+        description="Contact Flash Transport Abu Dhabi headquarters for professional bus rentals, corporate staff transport contracts, and luxury vehicle hire."
         canonical="https://www.flashtp.com/contact-us/"
       />
       {/* Contact Hero */}
@@ -76,7 +76,7 @@ export const Contact: React.FC = () => {
                   Headquarters & Dispatch
                 </h2>
                 <p className="text-sm text-[#686D75] leading-relaxed">
-                  Our commercial logistics center in Abu Dhabi manages 24/7 fleet movements and provides immediate assistance for bookings and emergency dispatch.
+                  Our commercial logistics center in Abu Dhabi manages fleet movements and provides immediate assistance for bookings and emergency dispatch.
                 </p>
               </div>
 

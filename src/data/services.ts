@@ -112,7 +112,7 @@ export const SERVICES: ServiceItem[] = [
     benefits: [
       'Eliminate employee tardiness and reduce workforce transit stress',
       'Substantial corporate cost savings compared to managing in-house fleets',
-      'Optimized multi-shift coverage: Day shifts, night shifts, and 24/7 rotational cycles',
+      'Optimized multi-shift coverage: Day shifts, night shifts, and rotational cycles',
       'Modern, climate-controlled buses ensuring optimal worker comfort and productivity',
       'Transparent corporate reporting with monthly attendance and mileage telemetry'
     ],
@@ -130,7 +130,7 @@ export const SERVICES: ServiceItem[] = [
         description: 'Equipped with permits and safety gear for industrial zones including Musaffah, ICAD, Al Ruwais, and Habshan.'
       },
       {
-        title: '24/7 Shift Coverage',
+        title: 'Multi-Shift Coverage',
         description: 'Seamless operations for continuous 24-hour operations in healthcare, security, facilities, and manufacturing.'
       }
     ],
@@ -151,7 +151,7 @@ export const SERVICES: ServiceItem[] = [
       'Strict fatigue management policies ensuring fresh, rested drivers for all shifts',
       'Regular air-conditioning filter replacement and sanitization',
       'Commercial fleet insurance with comprehensive passenger liability coverage',
-      'Direct radio and cellular connection to 24/7 central dispatch'
+      'Direct radio and cellular connection to central dispatch'
     ],
     howItWorks: [
       {
@@ -193,7 +193,7 @@ export const SERVICES: ServiceItem[] = [
     slug: 'rent-a-car',
     title: 'Executive Car & Limousine Services',
     shortDescription: 'Premium chauffeured vehicles for corporate leaders, VIP guests, and special occasions, combining comfort, privacy, and professionalism.',
-    longDescription: 'Whether you need a reliable sedan for everyday city commuting, a rugged SUV for executive site visits, or a luxury flagship like the Cadillac Escalade for VIP delegation, Flash Transport provides the premier rent-a-car service in Abu Dhabi. We offer transparent rental agreements, pristine vehicle condition, 24/7 roadside assistance, and competitive corporate and individual rates.',
+    longDescription: 'Whether you need a reliable sedan for everyday city commuting, a rugged SUV for executive site visits, or a luxury flagship like the Cadillac Escalade for VIP delegation, Flash Transport provides the premier rent-a-car service in Abu Dhabi. We offer transparent rental agreements, pristine vehicle condition, dedicated roadside assistance, and competitive corporate and individual rates.',
     iconName: 'Car',
     imageKey: 'service-rent-a-car',
     originalImageUrl: 'https://flashtp.com/wp-content/uploads/2024/11/car1.jpg',
@@ -211,7 +211,7 @@ export const SERVICES: ServiceItem[] = [
       },
       {
         title: 'Comprehensive Insurance',
-        description: 'Full comprehensive vehicle insurance included with 24/7 emergency roadside support.'
+        description: 'Full comprehensive vehicle insurance included with emergency roadside support.'
       },
       {
         title: 'Airport Meet & Greet',
@@ -238,7 +238,7 @@ export const SERVICES: ServiceItem[] = [
     safetyPoints: [
       'Full multi-point safety check completed prior to hand-over',
       'Child safety seats available upon request',
-      '24/7 real-time roadside assistance across all seven Emirates',
+      'Real-time roadside assistance across all seven Emirates',
       'Sanitized interior with climate control pre-cooled for your comfort'
     ],
     howItWorks: [
@@ -260,7 +260,7 @@ export const SERVICES: ServiceItem[] = [
       {
         step: 4,
         title: 'Smooth Travel Experience',
-        description: 'Enjoy effortless driving with dedicated 24/7 customer support whenever needed.'
+        description: 'Enjoy effortless driving with dedicated customer support whenever needed.'
       }
     ],
     faqs: [

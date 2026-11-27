@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
                 <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FEECEE] border border-[#F5C6CA] mb-3 sm:mb-4">
                   <span className="w-2 h-2 rounded-full bg-[#E31E2B] animate-pulse" />
                   <span className="font-sans text-[11px] uppercase font-bold tracking-widest text-[#E31E2B]">
-                    24/7 Corporate &amp; Private Mobility
+                    Corporate &amp; Private Mobility
                   </span>
                 </div>
 
@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
               </div>
 
               <p className="font-body text-sm sm:text-[15px] text-[#687080] leading-relaxed max-w-xl mx-auto lg:mx-0 font-normal">
-                Plan your group travel in seconds using our quick booking assistant, or connect directly with our 24/7 commercial operations desk for instant quotes and dedicated fleet frameworks.
+                Plan your group travel in seconds using our quick booking assistant, or connect directly with our commercial operations desk for instant quotes and dedicated fleet frameworks.
               </p>
 
               {/* Direct Contact Points */}
@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
                   className="inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans font-semibold text-sm transition-all active:scale-[0.98] shadow-sm shadow-emerald-600/20 w-full sm:w-auto text-center"
                 >
                   <MessageCircle className="w-4 h-4 text-white" />
-                  <span>WhatsApp 24/7 Dispatch</span>
+                  <span>WhatsApp Dispatch</span>
                 </a>
               </div>
 

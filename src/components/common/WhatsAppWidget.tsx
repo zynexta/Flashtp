@@ -25,7 +25,7 @@ export const WhatsAppWidget: React.FC = () => {
       icon: <Users className="w-4 h-4 text-[#D92332]" />,
     },
     {
-      title: '24/7 Dispatch & Urgent Booking',
+      title: 'Dispatch & Urgent Booking',
       desc: 'Immediate vehicle mobilization support',
       msg: 'URGENT: I need immediate transport dispatch support from Flash Transport.',
       icon: <Clock className="w-4 h-4 text-[#D92332]" />,

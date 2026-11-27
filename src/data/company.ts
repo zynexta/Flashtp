@@ -67,7 +67,7 @@ export const COMPANY_VALUES = [
   },
   {
     title: 'Punctuality & Reliability',
-    description: 'Whether it is corporate staff reporting for high-stakes operations or students traveling to school, our automated route optimization and 24/7 tracking ensure on-time departures and arrivals every single day.'
+    description: 'Whether it is corporate staff reporting for high-stakes operations or students traveling to school, our automated route optimization and real-time tracking ensure on-time departures and arrivals every single day.'
   },
   {
     title: 'Customer-Centric Flexibility',

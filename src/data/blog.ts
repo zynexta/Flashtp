@@ -89,7 +89,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
             'Seating capacity: 13, 22, 34, 50, or 66 passengers',
             'Contract horizon: Single-day charter, monthly lease, or multi-year corporate SLA',
             'Geographic scope: Abu Dhabi intra-city vs. inter-emirate Dubai highway routes',
-            'Shift requirements: Single shift vs. 24/7 continuous rotational shifts'
+            'Shift requirements: Single shift vs. continuous rotational shifts'
           ]
         },
         {

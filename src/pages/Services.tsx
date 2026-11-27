@@ -197,7 +197,7 @@ export const Services: React.FC = () => {
             badge="Service Offerings"
             title="Explore Our Core Transport"
             highlightedText="Categories"
-            description="Every service is backed by our certified quality standards, 24/7 dedicated dispatch operations, and clean modern company-owned vehicles."
+            description="Every service is backed by our certified quality standards, dedicated dispatch operations, and clean modern company-owned vehicles."
           />
 
           <ServiceGrid services={SERVICES} />

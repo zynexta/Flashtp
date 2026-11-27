@@ -102,7 +102,7 @@ export const RequestQuote: React.FC = () => {
                   {COMPANY_CONTACT.phoneDisplay}
                 </div>
                 <p className="text-xs text-neutral-400">
-                  24/7 Dispatch Hotline • Multilingual dispatchers (English & Arabic)
+                  Dispatch Hotline • Multilingual dispatchers (English & Arabic)
                 </p>
                 <a
                   href={`tel:${COMPANY_CONTACT.phone}`}
