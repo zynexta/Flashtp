@@ -69,11 +69,6 @@ export const Footer: React.FC = () => {
                   <ShieldCheck className="w-4 h-4 text-[#E31E2B] flex-shrink-0" />
                   ISO 9001, 14001 &amp; 45001 Certified Fleet
                 </span>
-                <span className="hidden sm:inline text-[#D1D5DB]">•</span>
-                <span className="inline-flex items-center gap-1.5">
-                  <Clock className="w-4 h-4 text-[#16A34A] flex-shrink-0" />
-                  24/7 Rapid Response &amp; Standby Fleet
-                </span>
               </div>
             </div>
 
